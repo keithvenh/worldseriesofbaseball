@@ -1,0 +1,556 @@
+{
+    "eur": {
+        "fra": {
+            "location": "Paris",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 1
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 2,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 1
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 2,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 12
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 13,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 12
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 13,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "ger": {
+            "location": "Munich",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 10
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 11,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 10
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 11,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 7
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 8,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 4
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 5,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "ita": {
+            "location": "Rome",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 6
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 7,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 6
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 7,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 3
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 4,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 12
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 13,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "spa": {
+            "location": "Barcelona",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 3
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 4,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 3
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 4,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 13
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 14,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 7
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 8,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "ukg": {
+            "location": "London",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 1
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 2,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 1
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 2,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 4
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 5,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 4
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 5,
+                        "max": 20
+                    }
+                }
+            }
+        }
+    },
+    "afr": {
+        "egy": {
+            "location": "Cairo",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 15
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 16,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 15
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 16,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 11
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 12,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 11
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 12,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "nig": {
+            "location": "Lagos",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 13
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 14,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 13
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 14,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 4
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 5,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 4
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 5,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "ken": {
+            "location": "Nairobi",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 6
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 7,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 12
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 13,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 10
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 11,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 4
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 5,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "mor": {
+            "location": "Casablanca",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 3
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 4,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 3
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 4,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 8
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 9,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 8
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 9,
+                        "max": 20
+                    }
+                }
+            }
+        },
+        "saf": {
+            "location": "Cape Town",
+            "singles": {
+                "l": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 19
+                    },
+                    "lineout": {
+                        "type": "Lineout (2B)",
+                        "min": 20,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "single": {
+                        "type": "Single*",
+                        "min": 1,
+                        "max": 16
+                    },
+                    "lineout": {
+                        "type": "Lineout (SS)",
+                        "min": 17,
+                        "max": 20
+                    }
+                }
+            },
+            "homeruns": {
+                "l": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 9
+                    },
+                    "flyout": {
+                        "type": "Flyball (RF) B",
+                        "min": 10,
+                        "max": 20
+                    }
+                },
+                "r": {
+                    "homerun": {
+                        "type": "Homerun",
+                        "min": 1,
+                        "max": 9
+                    },
+                    "flyout": {
+                        "type": "Flyball (LF) B",
+                        "min": 10,
+                        "max": 20
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.LineupSlot {
+    border: 1px solid black;
+    display: flex;
+}
+
+.PlayerDetails {
+    height: 24px;
+    display: flex;
+    p {
+        height: 24px;
+        width: 24px;
+        border: 1px solid black;
+        text-align: center;
+        line-height: 24px;
+    }
+    .name {
+        text-transform: uppercase;
+        font-size: 0.8em;
+        height: 24px;
+        width: 240px;
+        border: 1px solid black;
+        line-height: 24px;
+        padding-left: 12px;
+    }
+}
+
+.PlateAppearances {
+    display: flex;
+}
+
+.PlateAppearance {
+    height: 72px;
+    width: 72px;
+    border: 1px solid black;
+    position: relative;
+
+
+    .diamond {
+        height: 36px;
+        width: 36px;
+        transform-origin: center;
+        transform: rotate(45deg);
+        border: 1px solid rgba(64, 64, 64, 0.3);
+        position: absolute;
+        left: 18px;
+        bottom: 12px;
+        box-sizing: border-box;
+        border-right: 1px solid #444;
+    }
+
+    .first, .second, .third, .home {
+        height: 12px;
+        width: 12px;
+        box-sizing: border-box;
+        position: absolute;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .first {
+        right: 0;
+        top: 0;
+        background-color: #444;
+        border-left: 1px solid rgba(64, 64, 64, 0.3);
+        border-bottom: 1px solid rgba(64, 64, 64, 0.3);
+    }
+
+    .second {
+        left: 0;
+        top: 0;
+        border-right: 1px solid rgba(64, 64, 64, 0.3);
+        border-bottom: 1px solid rgba(64, 64, 64, 0.3);
+    }
+
+    .third {
+        left: 0;
+        bottom: 0;
+        border-right: 1px solid rgba(64, 64, 64, 0.3);
+        border-top: 1px solid rgba(64, 64, 64, 0.3);
+    }
+
+    .home {
+        right: 0;
+        bottom: 0;
+        border-left: 1px solid rgba(64, 64, 64, 0.3);
+        border-top: 1px solid rgba(64, 64, 64, 0.3);
+    }
+}
