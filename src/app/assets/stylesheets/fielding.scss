@@ -1,0 +1,21 @@
+.positions, .range {
+    display: flex;
+    p {
+        padding: 12px;
+        border: 1px solid black;
+        margin: 3px;
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        text-align: center;
+        &:hover {
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+        &.true {
+            background-color: black;
+            color: white;
+        }
+    }
+}
