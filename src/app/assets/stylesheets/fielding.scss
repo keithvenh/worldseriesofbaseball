@@ -1,5 +1,6 @@
 .positions, .range {
     display: flex;
+    margin-left: 24px;
     p {
         padding: 12px;
         border: 1px solid black;
@@ -16,6 +17,135 @@
         &.true {
             background-color: black;
             color: white;
+        }
+        &.label {
+            border: none;
+            font-weight: bold;
+            text-align: right;
+            width: 60px;
+        }
+    }
+}
+
+.errorRating  {
+    display: flex;
+    margin: 3px;
+    margin-left: 24px;
+    align-items: center;
+    .label {
+        margin: 3px;
+        font-weight: bold;
+        line-height: 24px;
+        padding: 12px;
+        text-align: right;
+        width: 60px;
+    }
+    input {
+        background: none;
+        outline: none;
+        border: 1px solid black;
+        padding: 12px;
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        margin: 3px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
+.buttonContainer {
+    display: flex;
+    margin-left: 111px;
+}
+.rollButton {
+    background: none;
+    border: 1px solid black;
+    padding: 12px; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 6px;
+    width: 120px;
+    &:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.errorCodes i {
+    height: 18px;
+    width: 18px;
+    padding: 6px;
+    margin: 2px;
+    line-height: 18px;
+    border: 1px solid black;
+    display: inline-block;
+    text-align: center;
+    &.no {
+        background-color: black;
+    }
+}
+
+.results {
+    display: flex;
+    margin-left: 114px;
+    p {
+        border: 1px solid black;
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        text-align: center;
+        padding: 12px;
+        margin: 3px;
+        background-color: black;
+        color: white;
+    }
+}
+
+.rangeResult {
+    border: 1px solid black;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    text-align: center;
+    padding: 12px;
+    margin: 3px;
+    margin-left: 117px;
+    background-color: black;
+    color: white;
+}
+
+.errors {
+    display: flex;
+    margin-left: 114px;
+    .label {
+        border: 1px solid black;
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        text-align: center;
+        padding: 12px;
+        margin: 3px;
+        background-color: black;
+        color: white;
+    }
+    .errorList {
+        display: flex;
+        height: 49px;
+        margin: 3px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .error {
+            height: 21px;
+            width: 21px;
+            line-height: 21px;
+            text-align: center;
+            border: 1px solid black;
+            margin: 0 3px;
         }
     }
 }
