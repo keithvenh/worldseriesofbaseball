@@ -1,0 +1,38 @@
+@import 'variables';
+
+.header {
+    height: 70px;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+        height: 100%;
+        font-family: $title;
+        font-size: 32px;
+        line-height: 70px;
+        padding: 0 12px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .links {
+        display: flex;
+        height: 70px;
+        font-size: 16px;
+        padding-right: 12px;
+        .linkItem {
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 0 12px;
+            line-height: 70px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
