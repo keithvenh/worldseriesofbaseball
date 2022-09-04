@@ -7,7 +7,7 @@ export default function Home(props) {
     onAuthStateChanged(auth, (user) => {
         // go to HQ if user exists
         if(user) {
-          props.updateView('fielding', user);
+          props.updateView('home');
         // go to login if user does not exist
         } else {
           props.updateView('login');

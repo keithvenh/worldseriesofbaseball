@@ -7,6 +7,7 @@ import Home from './home/Home';
 import { getAuth } from 'firebase/auth';
 import Login from './auth/Login';
 import logout from '../helpers/auth/logout';
+import UpdateProfile from './auth/UpdateProfile';
 
 class App extends Component {
   constructor(props) {
@@ -28,16 +29,19 @@ class App extends Component {
         view = <SuperAdvanced />;
         break;
       case 'scorecard':
-        view = <Scorecard />
+        view = <Scorecard />;
         break;
       case 'signup':
-        view = <NewUser updateUser={this.updateUser} updateView={this.changeView} />
+        view = <NewUser updateUser={this.updateUser} updateView={this.changeView} />;
         break;
       case 'account':
-        view = <User updateView={this.changeView}/>
+        view = <User updateView={this.changeView}/>;
         break;
       case 'login':
-        view = <Login />
+        view = <Login />;
+        break;
+      case 'profileUpdate':
+        view = <UpdateProfile updateView={this.changeView} />;
         break;
       default:
         view = <Home updateView={this.changeView} />;
