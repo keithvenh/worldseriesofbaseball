@@ -1,0 +1,49 @@
+{
+    "SI1": {
+        "RP": "With a runner on first base the batter hits a line drive which hits the runner! The runner on first is called out. Batter goes to first on a single and all other runners hold. /n/nWith no runner on first, the better hits a single; runners advance 1 base.",
+        "E1": "Single and error. Batter to second; all runners advance 2 bases.",
+        "E2": "Single and error. Batter to third; all runners score.",
+        "E3": "N/A",
+        "NO": "Single, runners advance 1 base."
+    },
+    "SI2": {
+        "RP": "Batter hits a single with base runners advancing two bases. As the batter rounds first, the fielder throws the ball behind him and catch him off the bag for an out.",
+        "E1": "Single and error. Batter to second; all runners advance 2 bases",
+        "E2": "Single and error. Batter to third; all runners score.",
+        "E3": "N/A",
+        "NO": "Single, runners advance 2 bases."
+    },
+    "G1": {
+        "RP": "If there is a runner on first, the batter hits a groundball to the fielder who starts a double play. The runner on first breaks up the double play but the umpire rules interference occured - it goes into the book as a double play! /n/nWith no runner on first, the batter grounds out with the runners holding.",
+        "E1": "Error, batter to first, runners advance 1 base.",
+        "E2": "Error, batter to second, runners advance 2 bases.",
+        "E3": "N/A",
+        "NO": {
+            "Bases": ["Empty", "1st", "2nd", "3rd", "1st & 2nd", "1st & 3rd", "2nd & 3rd", "Loaded"],
+            "Infield Normal": ["Batter", "DP43", "Right", "Runadv", "DP54", "DP43", "Runadv", "DP43"],
+            "Infield In": ["N/A", "DP43", "Right", "Batter", "DP43", "Batter", "Batter", "DP23"]
+        }
+    },
+    "G2": {
+        "RP": "Batter lines a shot that deflects off the pitcher to the fielder who makes the play to first for the out. Runners advance if forced.",
+        "E1": "Error, batter to first, runners advance 1 base.",
+        "E2": "Error, batter to second, runners advance 2 bases.",
+        "E3": "N/A",
+        "NO": {
+            "Bases": ["Empty", "1st", "2nd", "3rd", "1st & 2nd", "1st & 3rd", "2nd & 3rd", "Loaded"],
+            "Infield Normal": ["Batter", "Force", "Right", "Runadv", "Force", "Force", "Runadv", "Force"],
+            "Infield In": ["N/A", "Force", "Right", "Leadr", "Leadr", "Batter", "Leadr", "Leadr"]
+        }
+    },
+    "G3": {
+        "RP": "Batter lines a shot that hits the mound and deflects to the fielder who makes the play to first for the out. All runners advance 1 base on the play.",
+        "E1": "Error, batter to first, runners advance 1 base.",
+        "E2": "Error, batter to second, runners advance 2 bases.",
+        "E3": "N/A",
+        "NO": {
+            "Bases": ["Empty", "1st", "2nd", "3rd", "1st & 2nd", "1st & 3rd", "2nd & 3rd", "Loaded"],
+            "Infield Normal": ["Batter", "Runadv", "Right", "Runadv", "Runadv", "Runadv", "Runadv", "Runadv"],
+            "Infield In": ["N/A", "Runadv", "Runadv", "Decide", "Runadv", "Down", "Decide", "Leadr"]
+        }
+    }
+}

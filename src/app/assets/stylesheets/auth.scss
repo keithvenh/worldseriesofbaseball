@@ -1,0 +1,47 @@
+.NewUser, .Login {
+    height: 90%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .formField {
+        display: flex;
+        flex-direction: column;
+        padding:  12px;
+
+        .label {
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 0.8em;
+            margin: 3px;
+            width: 300px;
+        }
+
+        input {
+            border: 1px solid black;
+            outline: none;
+            padding: 12px;
+            margin-left: 3px;
+            font-size: 18px;
+        }
+
+        button {
+            background: none;
+            border: 1px solid black;
+            padding: 12px;
+            outline: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            width: 300px;
+            &:hover {
+                cursor: pointer;
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+}

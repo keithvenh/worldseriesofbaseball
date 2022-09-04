@@ -70,7 +70,6 @@ class SuperAdvanced extends Component {
 
     render() {
 
-        console.log(this.state.errorResult["E1"].length)
         return (
             <div className='SuperAdvanced'>
                 <div className='positions'>

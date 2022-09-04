@@ -4,9 +4,11 @@ import './app/assets/stylesheets/main.scss';
 import App from './app/components/App';
 import reportWebVitals from './app/helpers/application/reportWebVitals';
 import { initializeApp } from "firebase/app";
+import { getAuth } from 'firebase/auth';
 import getFirebaseConfig from "./config/firebase";
 
-initializeApp(getFirebaseConfig());
+const app = initializeApp(getFirebaseConfig());
+const auth = getAuth(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -18,12 +18,9 @@ export default function rollDice() {
             res.push(rollRes);
         }
 
-        console.log(sum)
-
         result.push({'results': res, 'total': sum})
     }
 
-    console.log(result);
     return result;
 
 }
