@@ -1,5 +1,5 @@
 .NewUser, .Login {
-    height: 90%;
+    height: 95%;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -11,21 +11,34 @@
         flex-direction: column;
         padding:  12px;
 
+        &.name {
+            flex-direction: row;
+            .formField {
+                width: 50%;
+
+                .label {
+                    max-width: 100%;
+                    width: 200px;
+                }
+            }
+        }
+
         .label {
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 2px;
             font-size: 0.8em;
             margin: 3px;
-            width: 300px;
+            width: 450px;
         }
 
-        input {
+        input, select {
             border: 1px solid black;
             outline: none;
             padding: 12px;
             margin-left: 3px;
             font-size: 18px;
+            box-sizing: border-box;
         }
 
         button {
@@ -36,7 +49,7 @@
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
-            width: 300px;
+            width: 450px;
             &:hover {
                 cursor: pointer;
                 background-color: black;
@@ -44,4 +57,31 @@
             }
         }
     }
+}
+
+.User {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    .username {
+        font-size: 1.5em;
+        margin: 0;
+        letter-spacing: 2px;
+    }
+    .uid {
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        font-family: monospace;
+        margin-bottom: 12px;
+    }
+    .name, .email, .birthdate, .favTeam {
+        margin: 3px 0;
+        font-size: 18px;
+    }
+    .favTeam {
+        font-size: 1.4em;
+    }
+
 }

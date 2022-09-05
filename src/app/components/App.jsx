@@ -32,7 +32,7 @@ class App extends Component {
         view = <Scorecard />;
         break;
       case 'signup':
-        view = <NewUser updateUser={this.updateUser} updateView={this.changeView} />;
+        view = <NewUser updateView={this.changeView} />;
         break;
       case 'account':
         view = <User updateView={this.changeView}/>;
