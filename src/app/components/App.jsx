@@ -1,75 +1,81 @@
-import React, {Component} from 'react';
-import Scorecard from './scorecard/Scorecard';
-import SuperAdvanced from './fielding/SuperAdvanced';
-import NewUser from './auth/NewUser';
-import User from './auth/User';
-import Home from './home/Home';
-import { getAuth } from 'firebase/auth';
+import React, { useState, useEffect } from 'react';
 import Login from './auth/Login';
-import logout from '../helpers/auth/logout';
-import UpdateProfile from './auth/UpdateProfile';
+import Signup from './auth/Signup';
+import Header from './header/Header';
+import Dashboard from './home/Dashboard';
+import User from './auth/User';
+import Fielding from './fielding/SuperAdvanced';
+import { getAuth } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../db/db';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      view: <Home updateView={this.changeView} />
+export default function App() {
+  // Set an initializing state whilst Firebase connects
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+  const [profile, setProfile] = useState();
+  const [view, setView] = useState(<Login changeView={changeView} />);
+  const auth = getAuth();
+
+  // Handle user state changes
+  async function onAuthStateChanged(user) {
+    setUser(user);
+    let profile;
+    if(user) {
+      profile = await getDoc(doc(db, 'users', user.uid))
     }
-
-    this.changeView = this.changeView.bind(this);
+    setProfile(profile.data());
+    if (initializing) setInitializing(false);
   }
 
-  changeView = (page) => {
-    let view;
+  useEffect(() => {
+    const subscriber = auth.onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+  function changeView(page) {
     switch(page) {
-      case 'home':
-        view = <Home updateView={this.changeView} />;
-        break;
-      case 'fielding':
-        view = <SuperAdvanced />;
-        break;
-      case 'scorecard':
-        view = <Scorecard />;
+      case 'login':
+        setView(<Login changeView={changeView} />);
         break;
       case 'signup':
-        view = <NewUser updateView={this.changeView} />;
+        setView(<Signup changeView={changeView} />);
+        break;
+      case 'dashboard':
+        setView(<Dashboard changeView={changeView} user={{user: user, profile: profile}}/>);
         break;
       case 'account':
-        view = <User updateView={this.changeView}/>;
+        setView(<User />);
         break;
-      case 'login':
-        view = <Login />;
-        break;
-      case 'profileUpdate':
-        view = <UpdateProfile updateView={this.changeView} />;
+      case 'fielding':
+        setView(<Fielding />);
         break;
       default:
-        view = <Home updateView={this.changeView} />;
+        setView(<Login changeView={changeView} />);
     }
+  }
 
-    this.setState({view: view})
-  }  
-
-  render() {
-
+  if (initializing) {
     return (
-      <div className="App">
-          <header className='header'>
-            <h1 className='title' onClick={() => this.changeView('home')}>World Series of Baseball</h1>
-            <nav className='navBar'>
-              <ul className='links'>
-                <li className='linkItem' onClick={() => this.changeView('home')}>Home</li>
-                <li className='linkItem' onClick={() => this.changeView('fielding')}>Fielding</li>
-                <li className='linkItem' onClick={() => this.changeView('scorecard')}>Scorecard</li>
-                {getAuth().currentUser ? <li className='linkItem' onClick={() => this.changeView('account')}>My Account</li> : <li className='linkItem' onClick={() => this.changeView('signup')}>Sign Up</li>}
-                {getAuth().currentUser ? <li className='linkItem' onClick={() => logout()}>Logout</li> : <li className='linkItem' onClick={() => this.changeView('login')}>Login</li>}
-              </ul>
-            </nav>
-          </header>
-          {this.state.view}
+      <div className='App'>
+        <iframe src="https://giphy.com/embed/3ohzdJKvFq7VYRhKhy" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
       </div>
     );
   }
-}
 
-export default App;
+  if (!user) {
+    return (
+      <div className='App'>
+        <Header user={user} changeView={changeView} />
+        {view}
+      </div>
+    );
+  }
+
+  return (
+    <div className='App'>
+      <Header user={user} changeView={changeView} />
+      {view}
+    </div>
+  );
+}

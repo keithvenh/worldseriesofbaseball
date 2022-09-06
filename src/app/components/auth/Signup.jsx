@@ -3,7 +3,7 @@ import createUser from '../../helpers/auth/auth_signup_password';
 import { db } from '../../../db/db';
 import { doc, setDoc } from 'firebase/firestore';
 
-class NewUser extends Component {
+class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -70,7 +70,7 @@ class NewUser extends Component {
                                         birthdate: this.state.birthdate,
                                         favTeam: this.state.favTeam
                             }).catch((e) => {console.log(e)})
-            this.props.updateView('account');
+            this.props.updateView('dashboard');
         } else {
             this.setState({error: "Passwords Don't Match."})
         }
@@ -79,7 +79,7 @@ class NewUser extends Component {
     render() {
 
         return (
-            <form className='NewUser' onSubmit={this.handleSubmit}>
+            <form className='Signup' onSubmit={this.handleSubmit}>
                 <div className='formField'>
                     <p className='errors'>{this.state.errors}</p>
                 </div>
@@ -261,4 +261,4 @@ class NewUser extends Component {
     }
 }
 
-export default NewUser;
+export default Signup;

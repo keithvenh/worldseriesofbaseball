@@ -23,12 +23,13 @@ class Login extends React.Component {
     }
 
     handleSubmit(e) {
+        e.preventDefault();
         if(this.state.pass === this.state.confirmPass) {
             login(this.state.email, this.state.password);
+            this.props.changeView('dashboard');
         } else {
             this.setState({error: "Passwords Don't Match."})
         }
-        e.preventDefault();
     }
 
     render() {
