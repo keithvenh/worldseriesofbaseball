@@ -26,7 +26,7 @@ export default function Header (props) {
             <h1 className='title' onClick={() => props.changeView('dashboard')}>World Series of Baseball</h1>
             <nav className='navBar'>
                 <ul className='links'>
-                    <li className='linkItem' onClick={() => props.changeView('dashboard')}>Home</li>
+                    <li className='linkItem' onClick={() => props.changeView('home')}>Home</li>
                     <li className='linkItem' onClick={() => props.changeView('fielding')}>Fielding</li>
                     <li className='linkItem' onClick={() => props.changeView('account')}>My Account</li>
                     <li className='linkItem' onClick={logoutUser}>Logout</li>

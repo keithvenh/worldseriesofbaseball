@@ -3,6 +3,7 @@ import Login from './auth/Login';
 import Signup from './auth/Signup';
 import Header from './header/Header';
 import Dashboard from './home/Dashboard';
+import Home from './home/Home';
 import User from './auth/User';
 import Fielding from './fielding/SuperAdvanced';
 import { getAuth } from 'firebase/auth';
@@ -43,6 +44,9 @@ export default function App() {
         break;
       case 'dashboard':
         setView(<Dashboard changeView={changeView} user={{user: user, profile: profile}}/>);
+        break;
+      case 'home':
+        setView(<Home changeView={changeView} user={{user: user, profile: profile}}/>);
         break;
       case 'account':
         setView(<User />);
