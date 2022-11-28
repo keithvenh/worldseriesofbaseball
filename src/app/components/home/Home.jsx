@@ -19,7 +19,6 @@ export default function Home(props) {
       <div className='Home'>
         <RecentGames />
         <Standings />
-        <p >Welcome to the home page of the app</p>
       </div>
     )
 }

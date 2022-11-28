@@ -28,11 +28,18 @@ export default function RecentGames (props) {
         fetchGames();
     },[])
 
+    function getRecord(team, game = 1000) {
+        const searchGames = games.filter(g => g.id <= game)
+        let wins = searchGames.filter(g => g.winTeam === team).length
+        let losses = searchGames.filter(g => g.loseTeam === team).length
+        return `${wins}-${losses}`
+    }
+
     if(games) {
         return (
             <div className='RecentGames'>
                 {games.map((g) => {
-                    if(g.id > recentGames.length && g.id <= recentGames.length + 2){
+                    if(g.id > recentGames.length && g.id <= recentGames.length + 3){
 
                         return(
                             <div key={g.id} className='gameSummary'>
@@ -43,13 +50,13 @@ export default function RecentGames (props) {
                                     <p className='err'>E</p>
                                 </div>
                                 <div className={`${g.winTeam == g.visitor} visitor`}>
-                                    <p className='team visTeam'>{g.visitor.toUpperCase()}</p>
+                                    <p className='team visTeam'>{g.visitor.toUpperCase()} ({getRecord(g.visitor)})</p>
                                     <p className='runs visRuns'></p>
                                     <p className='hits visHits'></p>
                                     <p className='err visErrors'></p>
                                 </div>
                                 <div className={`${g.winTeam == g.home} home`}>
-                                    <p className='team homeTeam'>{g.home.toUpperCase()}</p>
+                                    <p className='team homeTeam'>{g.home.toUpperCase()} ({getRecord(g.home)})</p>
                                     <p className='runs homeRuns'></p>
                                     <p className='hits homeHits'></p>
                                     <p className='err homeErrors'></p>
@@ -59,7 +66,7 @@ export default function RecentGames (props) {
                     }
                 })}
                 {recentGames.map((g) => {
-                    if(g.id > recentGames.length-6){
+                    if(g.id > recentGames.length-7){
 
                         return(
                             <div key={g.id} className='gameSummary'>
@@ -70,13 +77,13 @@ export default function RecentGames (props) {
                                     <p className='err'>E</p>
                                 </div>
                                 <div className={`${g.winTeam == g.visitor} visitor`}>
-                                    <p className='team visTeam'>{g.visitor.toUpperCase()}</p>
+                                    <p className='team visTeam'>{g.visitor.toUpperCase()} ({getRecord(g.visitor, g.id)})</p>
                                     <p className='runs visRuns'>{g.visRuns}</p>
                                     <p className='hits visHits'>{g.visHits}</p>
                                     <p className='err visErrors'>{g.visErrors}</p>
                                 </div>
                                 <div className={`${g.winTeam == g.home} home`}>
-                                    <p className='team homeTeam'>{g.home.toUpperCase()}</p>
+                                    <p className='team homeTeam'>{g.home.toUpperCase()} ({getRecord(g.home, g.id)})</p>
                                     <p className='runs homeRuns'>{g.homeRuns}</p>
                                     <p className='hits homeHits'>{g.homeHits}</p>
                                     <p className='err homeErrors'>{g.homeErrors}</p>
