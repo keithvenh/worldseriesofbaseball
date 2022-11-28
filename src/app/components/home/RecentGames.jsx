@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getDocs, collection, query, where, orderBy, limit } from 'firebase/firestore';
 import { db } from '../../../db/db'
+import Game from '../games/Game';
 
 export default function RecentGames (props) {
 
@@ -42,7 +43,7 @@ export default function RecentGames (props) {
                     if(g.id > recentGames.length && g.id <= recentGames.length + 3){
 
                         return(
-                            <div key={g.id} className='gameSummary'>
+                            <div key={g.id} className='gameSummary' onClick={() => props.appView('game', {game: g})}>
                                 <div className='headers'>
                                     <p className='gameNumber'>GAME {g.id}</p>
                                     <p className='runs'>R</p>
@@ -69,7 +70,7 @@ export default function RecentGames (props) {
                     if(g.id > recentGames.length-7){
 
                         return(
-                            <div key={g.id} className='gameSummary'>
+                            <div key={g.id} className='gameSummary' onClick={() => props.appView('game', {game: g})}>
                                 <div className='headers'>
                                     <p className='gameNumber'>GAME {g.id}</p>
                                     <p className='runs'>R</p>

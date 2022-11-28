@@ -17,7 +17,7 @@ export default function Home(props) {
 
     return (
       <div className='Home'>
-        <RecentGames />
+        <RecentGames appView={props.appView}/>
         <Standings />
       </div>
     )

@@ -6,6 +6,8 @@ import Dashboard from './home/Dashboard';
 import Home from './home/Home';
 import User from './auth/User';
 import Fielding from './fielding/SuperAdvanced';
+import Games from './games/Games';
+import Game from './games/Game';
 import { getAuth } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../db/db';
@@ -15,7 +17,8 @@ export default function App() {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
   const [profile, setProfile] = useState();
-  const [view, setView] = useState(<Login changeView={changeView} />);
+  const [view, setView] = useState(<Login appView={appView} />);
+  const [link, setLink] = useState('login');
   const auth = getAuth();
 
   // Handle user state changes
@@ -34,29 +37,28 @@ export default function App() {
     return subscriber; // unsubscribe on unmount
   }, []);
 
-  function changeView(page) {
-    switch(page) {
-      case 'login':
-        setView(<Login changeView={changeView} />);
-        break;
-      case 'signup':
-        setView(<Signup changeView={changeView} />);
-        break;
-      case 'dashboard':
-        setView(<Dashboard changeView={changeView} user={{user: user, profile: profile}}/>);
-        break;
-      case 'home':
-        setView(<Home changeView={changeView} user={{user: user, profile: profile}}/>);
-        break;
-      case 'account':
-        setView(<User />);
-        break;
-      case 'fielding':
-        setView(<Fielding />);
-        break;
-      default:
-        setView(<Login changeView={changeView} />);
+  function appView(link, options = {subview: ''}) {
+
+    const views = {
+      login: <Login appView={appView} />,
+      signup: <Signup appView={appView} />,
+      dashboard: <Dashboard appView={appView} user={{user: user, profile: profile}}/>,
+      home: <Home appView={appView} user={{user: user, profile: profile}}/>,
+      account: <User />,
+      fielding: <Fielding />,
+      games: <Games appView={appView} options={options} />,
+      game: <Game appView={appView} options={options} />
     }
+
+    if(link === 'users' && options.subview === 'show') {
+      if(options && options.user.uid === options.requestor.uid) {
+          // Return myAccount if current user requestor are the same
+          return appView('auth')
+        } 
+    }
+
+    setView(views[link]);
+    setLink(link);
   }
 
   if (initializing) {
@@ -70,7 +72,7 @@ export default function App() {
   if (!user) {
     return (
       <div className='App'>
-        <Header user={user} changeView={changeView} />
+        <Header user={user} appView={appView} />
         {view}
       </div>
     );
@@ -78,7 +80,7 @@ export default function App() {
 
   return (
     <div className='App'>
-      <Header user={user} changeView={changeView} />
+      <Header user={user} appView={appView} />
       {view}
     </div>
   );
