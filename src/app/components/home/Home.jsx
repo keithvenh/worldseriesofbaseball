@@ -1,5 +1,6 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import RecentGames from './RecentGames';
+import Standings from './Standings';
 
 export default function Home(props) {
     const auth = getAuth();
@@ -17,6 +18,7 @@ export default function Home(props) {
     return (
       <div className='Home'>
         <RecentGames />
+        <Standings />
         <p >Welcome to the home page of the app</p>
       </div>
     )

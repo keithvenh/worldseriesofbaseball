@@ -1,0 +1,51 @@
+@import 'variables';
+
+.Standings {
+    border: 1px solid red;
+    min-height: 500px;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    .division {
+        width: 20%;
+        padding: 0 3px;
+        margin: 0 5%;
+    }
+}
+
+.divisionTitle {
+    background-color: $black;
+    padding: 6px;
+    color: $white;
+    text-transform: uppercase;
+}
+
+.teamStandings {
+    border-bottom: 1px solid $grey;
+    &:last-child {
+        border: none;
+    }
+    &:nth-child(even) {
+        background-color: $lightGrey;
+    }
+    display: flex;
+    padding: 6px;
+    text-align: center;
+    &.headings {
+        font-weight: bold;
+        border-bottom: 2px solid $black
+    }
+}
+
+.teamName {
+    min-widtH: 60%;
+    text-align: left;
+}
+
+.teamWins, .teamLosses {
+    min-width: 10%;
+}
+
+.teamWinPct {
+    min-width: 20%;
+}
