@@ -5,21 +5,21 @@ import { db } from '../../../db/db';
 export default function Game(props) {
 
     const [game, setGame] = useState(props.options.game);
-    const [mode, setMode] = useState('edit');
+    const [mode, setMode] = useState('view');
 
     function updateGameStats(e) {
         e.preventDefault();
         let winner = game.homeRuns > game.visRuns ? game.home : game.visRuns > game.homeRuns ? game.visitor : null;
         let loser = game.homeRuns < game.visRuns ? game.home : game.visRuns < game.homeRuns ? game.visitor : null;
         let value = e.target.value != '' ? parseInt(e.target.value) : ''
-        setGame({...game, winTeam: winner, loseTeam: loser, [e.target.id]: value});
+        let final = winner !== null;
+        setGame({...game, winTeam: winner, loseTeam: loser, [e.target.id]: value, final: final});
     }
 
     function updateGame() {
         console.log(game.id);
         updateDoc(doc(db, 'leagues/1/games', game.id.toString()), {
-            ...game,
-            final: true
+            ...game
         }).then(() => {
             setMode('view');
         })
@@ -47,6 +47,7 @@ export default function Game(props) {
                     <p className='hits homeHits'>{game.homeHits}</p>
                     <p className='err homeErrors'>{game.homeErrors}</p>
                 </div>
+                <div id='editButton' className='button edit' onClick={() => {setMode('edit')}}><i className='fa-solid fa-pencil'></i> Edit</div>
             </div>
         )
     } 
@@ -72,7 +73,7 @@ export default function Game(props) {
                     <input id='homeHits' className='hits homeHits'value={game.homeHits} onChange={(e) => updateGameStats(e)}/>
                     <input id='homeErrors' className='err homeErrors' value={game.homeErrors} onChange={(e) => updateGameStats(e)}/>
                 </div>
-                <div id='saveButton' className='button save' onClick={updateGame}>Save</div>
+                <div id='saveButton' className='button save' onClick={updateGame}><i className='fa-solid fa-floppy-disk'></i> Save</div>
             </div>
         )
     }

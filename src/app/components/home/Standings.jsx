@@ -38,7 +38,10 @@ export default function Standings (props) {
         let divTeams = filterTeams(division);
         let divTeamsRecords = getRecords(divTeams);
         let divTeamsSorted = divTeamsRecords.sort((a,b) => {
-            return b.winPct - a.winPct == 0 ? (b.wins + b.losses) - (a.wins + a.losses) : b.winPct - a.winPct;
+            if(b.winPct == a.winPct) {
+                return getHeadToHead(a, b);
+            }
+            return b.winPct - a.winPct;
         });
         return divTeamsSorted;
     }
@@ -61,6 +64,17 @@ export default function Standings (props) {
         })
 
         return teamsRecords
+    }
+
+    function getHeadToHead(teamA, teamB) {
+        const hToHGames = games.filter(g => {
+            let hasTeamA = (g.visitor === teamA.id || g.home === teamA.id);
+            let hasTeamB = (g.visitor === teamB.id || g.home === teamB.id);
+            return (hasTeamA && hasTeamB)
+        })
+        let teamAWins = hToHGames.filter(g => g.winTeam === teamA.id).length;
+        let teamBWins = hToHGames.filter(g => g.winTeam === teamB.id).length;
+        return teamBWins - teamAWins;
     }
 
     useEffect(() => {
