@@ -38,13 +38,12 @@ export default function Standings (props) {
         let divTeams = filterTeams(division);
         let divTeamsRecords = getRecords(divTeams);
         let divTeamsSorted = divTeamsRecords.sort((a,b) => {
-            return b.winPct - a.winPct
+            return b.winPct - a.winPct == 0 ? (b.wins + b.losses) - (a.wins + a.losses) : b.winPct - a.winPct;
         });
         return divTeamsSorted;
     }
     function filterTeams(division) {
         let filteredTeams = teams.filter(t => t.division.id === division);
-        console.log(filteredTeams)
         return filteredTeams;
     }
 
