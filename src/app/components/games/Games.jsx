@@ -35,28 +35,53 @@ export default function Games(props) {
             <div className='Games'>
                 {games.map((g) => {
         
-                    return(
-                        <div key={g.id} className='gameSummary' onClick={() => props.appView('game', {game: g})}>
-                            <div className='headers'>
-                                <p className='gameNumber'>GAME {g.id}</p>
-                                <p className='runs'>R</p>
-                                <p className='hits'>H</p>
-                                <p className='err'>E</p>
+                    if(g.final) {
+                        return(
+                            <div key={g.id} className='gameSummary' onClick={() => props.appView('game', {game: g})}>
+                                <div className='headers'>
+                                    <p className='gameNumber'>GAME {g.id}</p>
+                                    <p className='runs'>R</p>
+                                    <p className='hits'>H</p>
+                                    <p className='err'>E</p>
+                                </div>
+                                <div className={`${g.winTeam == g.visitor} visitor`}>
+                                    <p className='team visTeam'>{g.visitor.toUpperCase()} ({getRecord(g.visitor, g.id)})</p>
+                                    <p className='runs visRuns'>{g.visRuns}</p>
+                                    <p className='hits visHits'>{g.visHits}</p>
+                                    <p className='err visErrors'>{g.visErrors}</p>
+                                </div>
+                                <div className={`${g.winTeam == g.home} home`}>
+                                    <p className='team homeTeam'>{g.home.toUpperCase()} ({getRecord(g.home, g.id)})</p>
+                                    <p className='runs homeRuns'>{g.homeRuns}</p>
+                                    <p className='hits homeHits'>{g.homeHits}</p>
+                                    <p className='err homeErrors'>{g.homeErrors}</p>
+                                </div>
                             </div>
-                            <div className={`${g.winTeam == g.visitor} visitor`}>
-                                <p className='team visTeam'>{g.visitor.toUpperCase()} ({getRecord(g.visitor, g.id)})</p>
-                                <p className='runs visRuns'>{g.visRuns}</p>
-                                <p className='hits visHits'>{g.visHits}</p>
-                                <p className='err visErrors'>{g.visErrors}</p>
+                        ) 
+                    } else {
+                        return(
+                            <div key={g.id} className='gameSummary' onClick={() => props.appView('game', {game: g})}>
+                                <div className='headers'>
+                                    <p className='gameNumber'>GAME {g.id}</p>
+                                    <p className='runs'>R</p>
+                                    <p className='hits'>H</p>
+                                    <p className='err'>E</p>
+                                </div>
+                                <div className={`${g.winTeam == g.visitor} visitor`}>
+                                    <p className='team visTeam'>{g.visitor.toUpperCase()} ({getRecord(g.visitor, g.id)})</p>
+                                    <p className='runs visRuns'></p>
+                                    <p className='hits visHits'></p>
+                                    <p className='err visErrors'></p>
+                                </div>
+                                <div className={`${g.winTeam == g.home} home`}>
+                                    <p className='team homeTeam'>{g.home.toUpperCase()} ({getRecord(g.home, g.id)})</p>
+                                    <p className='runs homeRuns'></p>
+                                    <p className='hits homeHits'></p>
+                                    <p className='err homeErrors'></p>
+                                </div>
                             </div>
-                            <div className={`${g.winTeam == g.home} home`}>
-                                <p className='team homeTeam'>{g.home.toUpperCase()} ({getRecord(g.home, g.id)})</p>
-                                <p className='runs homeRuns'>{g.homeRuns}</p>
-                                <p className='hits homeHits'>{g.homeHits}</p>
-                                <p className='err homeErrors'>{g.homeErrors}</p>
-                            </div>
-                        </div>
-                    )
+                        ) 
+                    }
                 })}
             </div>
         )

@@ -45,3 +45,69 @@ require 'json'
 # end
 
 # File.new("src/db/hofPlayers.json", "w").puts(jsonHOFPlayers.to_json)
+
+# ===== Add HOF Players Hitting Cards to Database ===== #
+## ========== COMPLETE ========== ##
+# hofHitCards = CSV.parse(File.read('src/db/hofHitCards.csv', encoding: 'bom|utf-8'), headers: true)
+
+# jsonHOFHitCards = {}
+# hofHitCards.each do |row|
+#     firstName = row['first_name']
+#     lastName = row['last_name']
+
+#     jsonHOFHitCards[row['player_id']] = {
+#         "id": row['player_id'].to_i,
+#         "nameFirst": firstName,
+#         "nameLast": lastName,
+#         "setID": "HOF2014",
+#         "setName": "2014 Hall of Fame",
+#         "battingRecord": {
+#             "avg": row['avg'].to_f,
+#             "ab": row['ab'].to_i,
+#             "do": row['do'].to_i,
+#             "tr": row['tr'].to_i,
+#             "hr": row['hr'].to_i,
+#             "rbi": row['rbi'].to_i,
+#             "bb": row['bb'].to_i,
+#             "so": row['so'].to_i,
+#             "sb": row['sb'].to_i,
+#             "cs": row['cs'].to_i,
+#             "slg": row['slg'].to_f,
+#             "obp": row['obp'].to_f
+#         }
+#     }
+# end
+
+# File.new("src/db/hofHitCards.json", "w").puts(jsonHOFHitCards.to_json)
+
+# ===== Add HOF Players Pitching Cards to Database ===== #
+## ========== COMPLETE ========== ##
+# hofPitchCards = CSV.parse(File.read('src/db/hofPitchCards.csv', encoding: 'bom|utf-8'), headers: true)
+
+# jsonhofPitchCards = {}
+# hofPitchCards.each do |row|
+#     firstName = row['first_name']
+#     lastName = row['last_name']
+
+#     jsonhofPitchCards[row['player_id']] = {
+#         "id": row['player_id'].to_i,
+#         "nameFirst": firstName,
+#         "nameLast": lastName,
+#         "setID": "HOF2014",
+#         "setName": "2014 Hall of Fame",
+#         "pitchingRecord": {
+#             "era": row['era'].to_f,
+#             "w": row['w'].to_i,
+#             "l": row['l'].to_i,
+#             "s": row['s'].to_i,
+#             "sv": row['sv'].to_i,
+#             "ip": row['ip'].to_i,
+#             "ha": row['ha'].to_i,
+#             "bb": row['bb'].to_i,
+#             "so": row['so'].to_i,
+#             "hra": row['hra'].to_i
+#         }
+#     }
+# end
+
+# File.new("src/db/hofPitchCards.json", "w").puts(jsonhofPitchCards.to_json)
