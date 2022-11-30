@@ -8,6 +8,8 @@ import User from './auth/User';
 import Fielding from './fielding/SuperAdvanced';
 import Games from './games/Games';
 import Game from './games/Game';
+import Teams from './teams/index';
+import Team from './teams/show';
 import { getAuth } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../db/db';
@@ -47,7 +49,9 @@ export default function App() {
       account: <User />,
       fielding: <Fielding />,
       games: <Games appView={appView} options={options} />,
-      game: <Game appView={appView} options={options} />
+      game: <Game appView={appView} options={options} />,
+      teams: <Teams appView={appView} options={options} />,
+      team: <Team appView={appView} options={options} />
     }
 
     if(link === 'users' && options.subview === 'show') {

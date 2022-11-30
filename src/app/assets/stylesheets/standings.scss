@@ -22,18 +22,29 @@
 
 .teamStandings {
     border-bottom: 1px solid $grey;
+    &:hover {
+        cursor: pointer;
+        background-color: #efefef;
+    }
     &:last-child {
         border: none;
     }
     &:nth-child(odd) {
         background-color: $lightGrey;
+        &:hover {
+            background-color: #efefef;
+        }
     }
     display: flex;
     padding: 6px;
     text-align: center;
     &.headings {
         font-weight: bold;
-        border-bottom: 2px solid $black
+        border-bottom: 2px solid $black;
+        &:hover {
+            cursor: default;
+            background-color: $white;
+        }
     }
 }
 

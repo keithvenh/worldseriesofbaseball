@@ -85,7 +85,7 @@ export default function Standings (props) {
     if(teams && games) {
         return (
             <div className='Standings'>
-                <div className='nam division'>
+                <div className='afr division'>
                     <p className='divisionTitle'>Africa</p>
                     <div className='teamStandings headings'>
                         <p className='teamName'>Team</p>
@@ -95,7 +95,7 @@ export default function Standings (props) {
                     </div>
                     {getStandings('afr').map(t => {
                         return(
-                            <div key={t.id} className='teamStandings'>
+                            <div key={t.id} className='teamStandings' onClick={() => props.appView('team', {team: t})}>
                                 <p className='teamName'>{t.name}</p>
                                 <p className='teamWins'>{t.wins}</p>
                                 <p className='teamLosses'>{t.losses}</p>
@@ -104,7 +104,7 @@ export default function Standings (props) {
                         )
                     })}
                 </div>
-                <div className='nam division'>
+                <div className='asi division'>
                     <p className='divisionTitle'>Asia</p>
                     <div className='teamStandings headings'>
                         <p className='teamName'>Team</p>
@@ -114,7 +114,7 @@ export default function Standings (props) {
                     </div>
                     {getStandings('asi').map(t => {
                         return(
-                            <div key={t.id} className='teamStandings'>
+                            <div key={t.id} className='teamStandings' onClick={() => props.appView('team', {team: t})}>
                                 <p className='teamName'>{t.name}</p>
                                 <p className='teamWins'>{t.wins}</p>
                                 <p className='teamLosses'>{t.losses}</p>
@@ -123,7 +123,7 @@ export default function Standings (props) {
                         )
                     })}
                 </div>
-                <div className='nam division'>
+                <div className='eur division'>
                     <p className='divisionTitle'>Europe</p>
                     <div className='teamStandings headings'>
                         <p className='teamName'>Team</p>
@@ -133,7 +133,7 @@ export default function Standings (props) {
                     </div>
                     {getStandings('eur').map(t => {
                         return(
-                            <div key={t.id} className='teamStandings'>
+                            <div key={t.id} className='teamStandings' onClick={() => props.appView('team', {team: t})}>
                                 <p className='teamName'>{t.name}</p>
                                 <p className='teamWins'>{t.wins}</p>
                                 <p className='teamLosses'>{t.losses}</p>
@@ -152,7 +152,7 @@ export default function Standings (props) {
                     </div>
                     {getStandings('nam').map(t => {
                         return(
-                            <div key={t.id} className='teamStandings'>
+                            <div key={t.id} className='teamStandings' onClick={() => props.appView('team', {team: t})}>
                                 <p className='teamName'>{t.name}</p>
                                 <p className='teamWins'>{t.wins}</p>
                                 <p className='teamLosses'>{t.losses}</p>
@@ -161,7 +161,7 @@ export default function Standings (props) {
                         )
                     })}
                 </div>
-                <div className='nam division'>
+                <div className='oce division'>
                     <p className='divisionTitle'>Oceania</p>
                     <div className='teamStandings headings'>
                         <p className='teamName'>Team</p>
@@ -171,7 +171,7 @@ export default function Standings (props) {
                     </div>
                     {getStandings('oce').map(t => {
                         return(
-                            <div key={t.id} className='teamStandings'>
+                            <div key={t.id} className='teamStandings' onClick={() => props.appView('team', {team: t})}>
                                 <p className='teamName'>{t.name}</p>
                                 <p className='teamWins'>{t.wins}</p>
                                 <p className='teamLosses'>{t.losses}</p>
@@ -180,7 +180,7 @@ export default function Standings (props) {
                         )
                     })}
                 </div>
-                <div className='nam division'>
+                <div className='sam division'>
                     <p className='divisionTitle'>South America</p>
                     <div className='teamStandings headings'>
                         <p className='teamName'>Team</p>
@@ -190,7 +190,7 @@ export default function Standings (props) {
                     </div>
                     {getStandings('sam').map(t => {
                         return(
-                            <div key={t.id} className='teamStandings'>
+                            <div key={t.id} className='teamStandings' onClick={() => props.appView('team', {team: t})}>
                                 <p className='teamName'>{t.name}</p>
                                 <p className='teamWins'>{t.wins}</p>
                                 <p className='teamLosses'>{t.losses}</p>
