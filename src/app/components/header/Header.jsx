@@ -27,6 +27,7 @@ export default function Header (props) {
             <nav className='navBar'>
                 <ul className='links'>
                     <li className='linkItem' onClick={() => props.appView('home')}>Home</li>
+                    <li className='linkItem' onClick={() => props.appView('games')}>Games</li>
                     <li className='linkItem' onClick={() => props.appView('fielding')}>Fielding</li>
                     <li className='linkItem' onClick={() => props.appView('account')}>My Account</li>
                     <li className='linkItem' onClick={logoutUser}>Logout</li>

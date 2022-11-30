@@ -1,0 +1,13 @@
+@import 'variables';
+
+.Games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .gameSummary {
+        margin: 6px;
+        &:nth-child(even) {
+            background-color: $lightGrey;
+        }
+    }
+}
