@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { collection, query, getDocs, orderBy, where } from 'firebase/firestore';
 import { db } from '../../../db/db';
+import LineupCard from './LineupCard';
 
 export default function Team (props) {
 
@@ -10,6 +11,7 @@ export default function Team (props) {
     const [initializing, setInitializing] = useState(true);
 
     const team = props.options.team;
+    console.log(team);
 
     async function fetchGames() {
 
@@ -101,7 +103,12 @@ export default function Team (props) {
                     })}
                 </div>
                 <div className='teamRoster'>
-                    
+
+                </div>
+                <div className='lineups'>
+                    <h2>Lineups</h2>
+                    <h3>Primary</h3>
+                    <LineupCard lineup={team.roster.lineups.primary} />
                 </div>
             </div>
         )

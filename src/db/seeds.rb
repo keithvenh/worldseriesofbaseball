@@ -26,23 +26,23 @@ require 'json'
 # File.new("src/db/games.json", "w").puts(jsonGames.to_json)
 
 # ===== Add HOF Players to Database ===== #
-## ========== COMPLETE ========== ##
-# hofPlayers = CSV.parse(File.read('src/db/hofPlayers.csv', encoding: 'bom|utf-8'), headers: true)
+# ========== COMPLETE ========== ##
+hofPlayers = CSV.parse(File.read('src/db/hofPlayers.csv', encoding: 'bom|utf-8'), headers: true)
 
-# jsonHOFPlayers = {}
-# hofPlayers.each do |row|
-#     firstName = row['first_name']
-#     lastName = row['last_name']
+jsonHOFPlayers = {}
+hofPlayers.each do |row|
+    firstName = row['first_name']
+    lastName = row['last_name']
 
-#     jsonHOFPlayers[row['player_id']] = {
-#         "id": row['player_id'].to_i,
-#         "nameFirst": firstName,
-#         "nameLast": lastName,
-#         "nameDisplayFirstLast": "#{firstName} #{lastName}",
-#         "nameDisplayLastFirst": "#{lastName}, #{firstName}",
-#         "nameDisplayRoster": "#{lastName}, #{firstName[0]}"
-#     }
-# end
+    jsonHOFPlayers[row['player_id']] = {
+        "id": row['player_id'].to_i,
+        "nameFirst": firstName,
+        "nameLast": lastName,
+        "nameDisplayFirstLast": "#{firstName} #{lastName}",
+        "nameDisplayLastFirst": "#{lastName}, #{firstName}",
+        "nameDisplayRoster": "#{lastName}, #{firstName[0]}"
+    }
+end
 
 # File.new("src/db/hofPlayers.json", "w").puts(jsonHOFPlayers.to_json)
 
@@ -111,3 +111,27 @@ require 'json'
 # end
 
 # File.new("src/db/hofPitchCards.json", "w").puts(jsonhofPitchCards.to_json)
+
+# ===== Add Lineups to Database ===== #
+## ========== COMPLETE ========== ##
+lineups = CSV.parse(File.read('src/db/lineups.csv', encoding: 'bom|utf-8'), headers: true)
+
+jsonlineups = {}
+lineups.each do |row|
+    firstName = row['first_name']
+    lastName = row['last_name']
+    player = jsonHOFPlayers.select { |k,v| (v[:nameFirst] === firstName && v[:nameLast] === lastName) }
+    playerID = player.keys[0]
+    puts player[playerID][:nameDisplayRoster]
+    jsonlineups[playerID] = {
+        "playerID": playerID.to_i,
+        "teamID": row['team_id'],
+        "teamName": row['team_name'],
+        "position": row['pos'],
+        "positionID": row['posNum'].to_i,
+        "lineupSpot": row['order'].to_i,
+        "nameDisplayRoster": player[playerID][:nameDisplayRoster]
+    }
+end
+
+File.new("src/db/lineups.json", "w").puts(jsonlineups.to_json)

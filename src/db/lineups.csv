@@ -1,0 +1,136 @@
+team_id,team_name,order,last_name,first_name,pos,posNum
+egy,Egypt,1,Kelley,Joe,LF,7
+egy,Egypt,2,DiMaggio,Joe,CF,8
+egy,Egypt,3,Suttles,Mule,DH,10
+egy,Egypt,4,Ruth,Babe,RF,9
+egy,Egypt,5,Bottomley,Jim,1B,3
+egy,Egypt,6,Hartnett,Gabby,C,2
+egy,Egypt,7,Johnson,Judy,3B,5
+egy,Egypt,8,Ward,John,SS,6
+egy,Egypt,9,McPhee,Bid,2B,4
+saf,South Africa,1,Brock,Lou,LF,7
+saf,South Africa,2,Collins,Jimmy,3B,5
+saf,South Africa,3,Rogan,Bullet Joe,DH,10
+saf,South Africa,4,Mays,Willie,CF,8
+saf,South Africa,5,Brouthers,Dan,1B,3
+saf,South Africa,6,Slaughter,Enos,RF,9
+saf,South Africa,7,Ripken Jr.,Cal,SS,6
+saf,South Africa,8,Carter,Gary,C,2
+saf,South Africa,9,Mazeroski,Bill,2B,4
+usa,United States,1,Morgan,Joe,2B,4
+usa,United States,2,Youngs,Ross,RF,9
+usa,United States,3,Combs,Earle,CF,8
+usa,United States,4,Mackey,Biz,C,2
+usa,United States,5,Hafey,Chick,LF,7
+usa,United States,6,Connor,Roger,1B,3
+usa,United States,7,Lombardi,Ernie,DH,10
+usa,United States,8,Santo,Ron,3B,5
+usa,United States,9,Aparicio,Luis,SS,6
+mex,Mexico,1,Davis,George,SS,6
+mex,Mexico,2,Duffy,Hugh,LF,7
+mex,Mexico,3,Terry,Bill,1B,3
+mex,Mexico,4,Brown,Willard,CF,8
+mex,Mexico,5,Mize,Johnny,DH,10
+mex,Mexico,6,Clemente,Roberto,RF,9
+mex,Mexico,7,Doerr,Bobby,2B,4
+mex,Mexico,8,Schmidt,Mike,3B,5
+mex,Mexico,9,Schalk,Ray,C,2
+car,Caribbean,1,Robinson,Jackie,2B,4
+car,Caribbean,2,Roush,Edd,CF,8
+car,Caribbean,3,Heilmann,Harry,DH,10
+car,Caribbean,4,Delahanty,Ed,LF,7
+car,Caribbean,5,Wells,Willie,SS,6
+car,Caribbean,6,Boggs,Wade,3B,5
+car,Caribbean,7,Thompson,Sam,RF,9
+car,Caribbean,8,Beckley,Jake,1B,3
+car,Caribbean,9,Fisk,Carlton,C,2
+can,Canada,1,Molitor,Paul,3B,5
+can,Canada,2,Frisch,Frankie,2B,4
+can,Canada,3,Gibson,Josh,C,2
+can,Canada,4,Greenberg,Hank,DH,10
+can,Canada,5,Robinson,Frank,RF,9
+can,Canada,6,Cronin,Joe,SS,6
+can,Canada,7,Medwick,Joe,LF,7
+can,Canada,8,Kelly,George,1B,3
+can,Canada,9,Carey,Max,CF,8
+cam,Central America,1,Jennings,Hughie,SS,6
+cam,Central America,2,Keeler,Wee Willie,RF,9
+cam,Central America,3,Simmons,Al,LF,7
+cam,Central America,4,Klein,Chuck,DH,10
+cam,Central America,5,Brett,George,3B,5
+cam,Central America,6,Waner,Lloyd,CF,8
+cam,Central America,7,Alomar,Robbie,2B,4
+cam,Central America,8,Murray,Eddie,1B,3
+cam,Central America,9,Ferrell,Rick,C,2
+mor,Morocco,1,Chance,Frank,1B,3
+mor,Morocco,2,Flick,Elmer,RF,9
+mor,Morocco,3,Wilson,Jud,DH,10
+mor,Morocco,4,Dickey,Bill,C,2
+mor,Morocco,5,O’Rourke,Jim,LF,7
+mor,Morocco,6,Ashburn,Richie,CF,8
+mor,Morocco,7,Lazzeri,Tony,2B,4
+mor,Morocco,8,Robinson,Brooks,3B,5
+mor,Morocco,9,Reese,Pee Wee,SS,6
+nig,Nigeria,1,Collins,Eddie,2B,4
+nig,Nigeria,2,Wagner,Honus,SS,6
+nig,Nigeria,3,Mantle,Mickey,CF,8
+nig,Nigeria,4,Musial,Stan,1B,3
+nig,Nigeria,5,Gehringer,Charlie,DH,10
+nig,Nigeria,6,Clarke,Fred,LF,7
+nig,Nigeria,7,Traynor,Pie,3B,5
+nig,Nigeria,8,White,Deacon,C,2
+nig,Nigeria,9,Rice,Sam,RF,9
+ken,Kenya,1,Henderson,Rickey,LF,7
+ken,Kenya,2,Lajoie,Nap,2B,4
+ken,Kenya,3,Cobb,Ty,CF,8
+ken,Kenya,4,Foxx,Jimmie,DH,10
+ken,Kenya,5,Anson,Cap,1B,3
+ken,Kenya,6,Cochrane,Mickey,C,2
+ken,Kenya,7,Dandridge,Ray,3B,5
+ken,Kenya,8,Boudreau,Lou,SS,6
+ken,Kenya,9,Hooper,Harry,RF,9
+spa,Spain,1,Burkett,Jesse,LF,7
+spa,Spain,2,Waner,Paul,RF,9
+spa,Spain,3,Charleston,Oscar,CF,8
+spa,Spain,4,Williams,Ted,DH,10
+spa,Spain,5,Dihigo,Martin,SS,6
+spa,Spain,6,Cepeda,Orlando,1B,3
+spa,Spain,7,Baker,Home Run,3B,5
+spa,Spain,8,Herman,Billy,2B,4
+spa,Spain,9,Berra,Yogi,C,2
+ukg,United Kingdom,1,Carew,Rod,DH,10
+ukg,United Kingdom,2,Lloyd,Pop,SS,6
+ukg,United Kingdom,3,Leonard,Buck,1B,3
+ukg,United Kingdom,4,Torriente,Cristobal,CF,8
+ukg,United Kingdom,5,Manush,Heinie,LF,7
+ukg,United Kingdom,6,Ott,Mel,RF,9
+ukg,United Kingdom,7,Mathews,Eddie,3B,5
+ukg,United Kingdom,8,Bresnahan,Roger,C,2
+ukg,United Kingdom,9,Gordon,Joe,2B,4
+eeu,Eastern Europe,1,Cuyler,Kiki,RF,9
+eeu,Eastern Europe,2,Yastrzemski,Carl,LF,7
+eeu,Eastern Europe,3,Hornsby,Rogers,2B,4
+eeu,Eastern Europe,4,Stearnes,Turkey,CF,8
+eeu,Eastern Europe,5,Taylor,Ben,1B,3
+eeu,Eastern Europe,6,Hill,Pete,DH,10
+eeu,Eastern Europe,7,Santop,Louis,C,2
+eeu,Eastern Europe,8,Maranville,Rabbit,SS,6
+eeu,Eastern Europe,9,Mendez,Jose,3B,5
+neu,Northern Europe,1,Larkin,Barry,SS,6
+neu,Northern Europe,2,Speaker,Tris,CF,8
+neu,Northern Europe,3,Thomas,Frank,DH,10
+neu,Northern Europe,4,Gehrig,Lou,1B,3
+neu,Northern Europe,5,Aaron,Hank,RF,9
+neu,Northern Europe,6,Wheat,Zack,LF,7
+neu,Northern Europe,7,Lindstrom,Freddy,3B,5
+neu,Northern Europe,8,Campanella,Roy,C,2
+neu,Northern Europe,9,Evers,Johnny,2B,4
+ita,Italy,1,Ewing,Buck,C,2
+ita,Italy,2,Hamilton,Billy,DH,10
+ita,Italy,3,Sisler,George,1B,3
+ita,Italy,4,Snider,Duke,CF,8
+ita,Italy,5,Goslin,Goose,LF,7
+ita,Italy,6,Crawford,Sam,RF,9
+ita,Italy,7,Appling,Luke,SS,6
+ita,Italy,8,Kell,George,3B,5
+ita,Italy,9,Sandberg,Ryne,2B,4

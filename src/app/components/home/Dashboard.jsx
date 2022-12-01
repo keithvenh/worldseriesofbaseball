@@ -1,10 +1,11 @@
-import { doc,setDoc, updateDoc } from 'firebase/firestore';
+import { doc,setDoc, updateDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../../db/db';
 
 import Games from '../../../db/games.json';
 import HOFPlayers from '../../../db/hofPlayers.json';
 import HOFHitCards from '../../../db/hofHitCards.json';
 import HOFPitchCards from '../../../db/hofPitchCards.json';
+import Lineups from '../../../db/lineups.json';
 
 export default function Dashboard(props) {
 
@@ -48,6 +49,19 @@ export default function Dashboard(props) {
         }
     }
 
+    async function seedLineups() {
+        for(const player in Lineups) {
+            let key = `roster.lineups.primary.${Lineups[player]["lineupSpot"]}`
+            
+            updateDoc(doc(db, 'leagues/1/teams', Lineups[player]["teamID"]), {
+                [key]: {
+                    ...Lineups[player]
+                }
+            })
+
+        }
+    }
+
     return (
         <div className='Dashboard'>
             <p className='username'>{props.user.profile.username}</p>
@@ -55,6 +69,7 @@ export default function Dashboard(props) {
             {/* <button onClick={seedHOFPlayers}>Seed HOF Players</button> */}
             {/* <button onClick={seedHOFHitCards}>Seed HOF HitCards</button> */}
             {/* <button onClick={seedHOFPitchCards}>Seed HOF PitchCards</button> */}
+            <button onClick={seedLineups}>Seed Lineups</button>
         </div>
     )
 }
