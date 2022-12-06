@@ -1,6 +1,7 @@
 import {useState, useEffect } from 'react';
 import { updateDoc, doc, getDoc, collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../../../db/db';
+import Scorecard from '../scorecard/Scorecard';
 
 export default function Game(props) {
 
@@ -81,51 +82,55 @@ export default function Game(props) {
                         <p className='teamScore'>{game.visRuns}</p>
                     </div>
                     <table className='boxscore'>
-                        <tr className='headers'>
-                            <th className='gameNumber'>GAME {game.id}</th>
-                            <th className='inning inning1'>1</th>
-                            <th className='inning inning2'>2</th>
-                            <th className='inning inning3'>3</th>
-                            <th className='inning inning4'>4</th>
-                            <th className='inning inning5'>5</th>
-                            <th className='inning inning6'>6</th>
-                            <th className='inning inning7'>7</th>
-                            <th className='inning inning8'>8</th>
-                            <th className='inning inning9'>9</th>
-                            <th className='runs'>R</th>
-                            <th className='hits'>H</th>
-                            <th className='err'>E</th>
-                        </tr>
-                        <tr className={`${game.winTeam == game.visitor} visitor`}>
-                            <td className='team visTeam'>{game.visitor.toUpperCase()}</td>
-                            <td className='inning inning1'>-</td>
-                            <td className='inning inning2'>-</td>
-                            <td className='inning inning3'>-</td>
-                            <td className='inning inning4'>-</td>
-                            <td className='inning inning5'>-</td>
-                            <td className='inning inning7'>-</td>
-                            <td className='inning inning6'>-</td>
-                            <td className='inning inning8'>-</td>
-                            <td className='inning inning9'>-</td>
-                            <td className='runs visRuns'>{game.visRuns}</td>
-                            <td className='hits visHits'>{game.visHits}</td>
-                            <td className='err visErrors'>{game.visErrors}</td>
-                        </tr>
-                        <tr className={`${game.winTeam == game.home} home`}>
-                            <td className='team homeTeam'>{game.home.toUpperCase()}</td>
-                            <td className='inning inning1'>-</td>
-                            <td className='inning inning2'>-</td>
-                            <td className='inning inning3'>-</td>
-                            <td className='inning inning4'>-</td>
-                            <td className='inning inning5'>-</td>
-                            <td className='inning inning7'>-</td>
-                            <td className='inning inning6'>-</td>
-                            <td className='inning inning8'>-</td>
-                            <td className='inning inning9'>-</td>
-                            <td className='runs homeRuns'>{game.homeRuns}</td>
-                            <td className='hits homeHits'>{game.homeHits}</td>
-                            <td className='err homeErrors'>{game.homeErrors}</td>
-                        </tr>
+                        <thead>
+                            <tr className='headers'>
+                                <th className='gameNumber'>GAME {game.id}</th>
+                                <th className='inning inning1'>1</th>
+                                <th className='inning inning2'>2</th>
+                                <th className='inning inning3'>3</th>
+                                <th className='inning inning4'>4</th>
+                                <th className='inning inning5'>5</th>
+                                <th className='inning inning6'>6</th>
+                                <th className='inning inning7'>7</th>
+                                <th className='inning inning8'>8</th>
+                                <th className='inning inning9'>9</th>
+                                <th className='runs'>R</th>
+                                <th className='hits'>H</th>
+                                <th className='err'>E</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={`${game.winTeam == game.visitor} visitor`}>
+                                <td className='team visTeam'>{game.visitor.toUpperCase()}</td>
+                                <td className='inning inning1'>-</td>
+                                <td className='inning inning2'>-</td>
+                                <td className='inning inning3'>-</td>
+                                <td className='inning inning4'>-</td>
+                                <td className='inning inning5'>-</td>
+                                <td className='inning inning7'>-</td>
+                                <td className='inning inning6'>-</td>
+                                <td className='inning inning8'>-</td>
+                                <td className='inning inning9'>-</td>
+                                <td className='runs visRuns'>{game.visRuns}</td>
+                                <td className='hits visHits'>{game.visHits}</td>
+                                <td className='err visErrors'>{game.visErrors}</td>
+                            </tr>
+                            <tr className={`${game.winTeam == game.home} home`}>
+                                <td className='team homeTeam'>{game.home.toUpperCase()}</td>
+                                <td className='inning inning1'>-</td>
+                                <td className='inning inning2'>-</td>
+                                <td className='inning inning3'>-</td>
+                                <td className='inning inning4'>-</td>
+                                <td className='inning inning5'>-</td>
+                                <td className='inning inning7'>-</td>
+                                <td className='inning inning6'>-</td>
+                                <td className='inning inning8'>-</td>
+                                <td className='inning inning9'>-</td>
+                                <td className='runs homeRuns'>{game.homeRuns}</td>
+                                <td className='hits homeHits'>{game.homeHits}</td>
+                                <td className='err homeErrors'>{game.homeErrors}</td>
+                            </tr>
+                        </tbody>
                     </table>
                     <div className='teamDisplay homeTeamDisplay'>
                         <p className='teamScore'>{game.homeRuns}</p>
@@ -138,6 +143,7 @@ export default function Game(props) {
                         </div>
                     </div>
                 </div>
+                <Scorecard team={teams.visitor}/>
                 <div id='editButton' className='button edit' onClick={() => {setMode('edit')}}><i className='fa-solid fa-pencil'></i> Edit</div>
             </div>
         )

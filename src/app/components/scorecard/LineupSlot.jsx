@@ -3,9 +3,8 @@ import PlateAppearances from "./PlateAppearances";
 
 export default function LineupSlot() {
     return (
-      <div className="LineupSlot">
+      <div className="LineupSpot">
         <PlayerDetails />
-        <PlateAppearances />
       </div>
     );
 }

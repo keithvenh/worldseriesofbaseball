@@ -1,89 +1,216 @@
-.LineupSlot {
-    border: 1px solid black;
+@import 'variables';
+
+.Scorecard {
+    border: 1px solid red;
+    margin: 0 36px;
     display: flex;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
 }
 
 .PlayerDetails {
-    height: 24px;
     display: flex;
-    p {
-        height: 24px;
-        width: 24px;
-        border: 1px solid black;
-        text-align: center;
-        line-height: 24px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 210px;
+    font-size: 14px;
+    border-bottom: 1px solid $grey;
+    box-sizing: border-box;
+    &.starter {
+        background-color: $lightGrey;
+        font-weight: bold;
+        .lineupSpot {
+            font-size: 14px;
+        }
+    }
+    &:last-child {
+        border-bottom: 1px solid $black;
+    }
+    .lineupSpot {
+        font-size: 10px;
     }
     .name {
-        text-transform: uppercase;
-        font-size: 0.8em;
-        height: 24px;
-        width: 240px;
-        border: 1px solid black;
-        line-height: 24px;
-        padding-left: 12px;
+        flex-grow: 1;
+        border-right: 1px solid $grey;
+        text-align: left;
+        padding-left: 3px;
+    }
+    .position, .range, .error, .lineupSpot {
+        display: inline-block;
+        text-align: center;
+        flex: 0 0 24px;
+        margin: 0;
+        border-right: 1px solid $grey;
     }
 }
 
-.PlateAppearances {
+.lineupSpot.headers {
     display: flex;
+    font-size: 10px;
+    font-weight: bold;
+    height: 14px;
+    line-height: 14px;
+    width: 210px;
+    border-bottom: 1px solid $grey;
+    .name {
+        flex-grow: 1;
+        border-right: 1px solid $grey;
+        text-align: left;
+        padding-left: 3px;
+    }
+    .position, .range, .error, .lineupSpot {
+        display: inline-block;
+        text-align: center;
+        flex: 0 0 24px;
+        margin: 0;
+        border-right: 1px solid $grey;
+    }
+}
+
+.inning {
+    .inningHeader {
+        font-size: 10px;
+        font-weight: bold;
+        height: 14px;
+        line-height: 14px;
+        width: 60px;
+        text-align: center;
+        border-bottom: 1px solid $grey;
+    }
+    .pa {
+        height: 60px;
+        width: 60px;
+        text-align: center;
+        line-height: 60px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $grey;
+        border-right: 1px solid $grey;
+    }
 }
 
 .PlateAppearance {
-    height: 72px;
-    width: 72px;
-    border: 1px solid black;
     position: relative;
-
-
     .diamond {
+        border: 1px dotted $grey;
         height: 36px;
         width: 36px;
         transform-origin: center;
         transform: rotate(45deg);
-        border: 1px solid rgba(64, 64, 64, 0.3);
-        position: absolute;
-        left: 18px;
-        bottom: 12px;
+        position: relative;
         box-sizing: border-box;
-        border-right: 1px solid #444;
+        left: 12px;
+        top: 12px;
     }
-
-    .first, .second, .third, .home {
-        height: 12px;
-        width: 12px;
-        box-sizing: border-box;
+    .result {
+        text-align: center;
+        height: 100%;
+        width: 100%;
         position: absolute;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    .first {
-        right: 0;
         top: 0;
-        background-color: #444;
-        border-left: 1px solid rgba(64, 64, 64, 0.3);
-        border-bottom: 1px solid rgba(64, 64, 64, 0.3);
     }
-
-    .second {
-        left: 0;
-        top: 0;
-        border-right: 1px solid rgba(64, 64, 64, 0.3);
-        border-bottom: 1px solid rgba(64, 64, 64, 0.3);
-    }
-
-    .third {
-        left: 0;
-        bottom: 0;
-        border-right: 1px solid rgba(64, 64, 64, 0.3);
-        border-top: 1px solid rgba(64, 64, 64, 0.3);
-    }
-
-    .home {
-        right: 0;
-        bottom: 0;
-        border-left: 1px solid rgba(64, 64, 64, 0.3);
-        border-top: 1px solid rgba(64, 64, 64, 0.3);
+    .out {
+        height: 10px;
+        width: 10px;
+        border: 1px solid $grey;
+        position: absolute;
+        border-radius: 100%;
+        left: 44px;
+        top: 44px;
     }
 }
+
+
+
+// .LineupSlot {
+//     border: 1px solid black;
+//     display: flex;
+// }
+
+// .PlayerDetails {
+//     height: 24px;
+//     display: flex;
+//     p {
+//         height: 24px;
+//         width: 24px;
+//         border: 1px solid black;
+//         text-align: center;
+//         line-height: 24px;
+//     }
+//     .name {
+//         text-transform: uppercase;
+//         font-size: 0.8em;
+//         height: 24px;
+//         width: 240px;
+//         border: 1px solid black;
+//         line-height: 24px;
+//         padding-left: 12px;
+//     }
+// }
+
+// .PlateAppearances {
+//     display: flex;
+// }
+
+// .PlateAppearance {
+//     height: 72px;
+//     width: 72px;
+//     border: 1px solid black;
+//     position: relative;
+
+
+//     .diamond {
+//         height: 36px;
+//         width: 36px;
+//         transform-origin: center;
+//         transform: rotate(45deg);
+//         border: 1px solid rgba(64, 64, 64, 0.3);
+//         position: absolute;
+//         left: 18px;
+//         bottom: 12px;
+//         box-sizing: border-box;
+//         border-right: 1px solid #444;
+//     }
+
+//     .first, .second, .third, .home {
+//         height: 12px;
+//         width: 12px;
+//         box-sizing: border-box;
+//         position: absolute;
+//         &:hover {
+//             cursor: pointer;
+//         }
+//     }
+
+//     .first {
+//         right: 0;
+//         top: 0;
+//         background-color: #444;
+//         border-left: 1px solid rgba(64, 64, 64, 0.3);
+//         border-bottom: 1px solid rgba(64, 64, 64, 0.3);
+//     }
+
+//     .second {
+//         left: 0;
+//         top: 0;
+//         border-right: 1px solid rgba(64, 64, 64, 0.3);
+//         border-bottom: 1px solid rgba(64, 64, 64, 0.3);
+//     }
+
+//     .third {
+//         left: 0;
+//         bottom: 0;
+//         border-right: 1px solid rgba(64, 64, 64, 0.3);
+//         border-top: 1px solid rgba(64, 64, 64, 0.3);
+//     }
+
+//     .home {
+//         right: 0;
+//         bottom: 0;
+//         border-left: 1px solid rgba(64, 64, 64, 0.3);
+//         border-top: 1px solid rgba(64, 64, 64, 0.3);
+//     }
+// }
