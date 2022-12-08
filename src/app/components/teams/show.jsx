@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { collection, query, getDocs, orderBy, where } from 'firebase/firestore';
 import { db } from '../../../db/db';
 import LineupCard from './LineupCard';
+import RosterCard from './RosterCard';
+import Navbar from '../navigation/Navbar';
 
 export default function Team (props) {
 
@@ -49,9 +51,14 @@ export default function Team (props) {
     if(games) {
         return (
             <div className='Team'>
-                <p>{team.name}</p>
+                <Navbar 
+                    title={team.name}
+                    handler={props.teamView}
+                    links={['schedule', 'depthChart', 'lineups', 'stats', 'roster']}
+                />
+
                 <div className='teamGames'>
-                    <p>Games</p>
+                    <p className='heading'>Games</p>
                     {games.map((g) => {
                         if(g.final) {
                             return(
@@ -103,7 +110,8 @@ export default function Team (props) {
                     })}
                 </div>
                 <div className='teamRoster'>
-
+                    <RosterCard roster={team.roster.all} />
+                    <div className='addPlayerButton'><i className='fa-solid fa-circle-plus'></i></div>
                 </div>
                 <div className='lineups'>
                     <h2>Lineups</h2>

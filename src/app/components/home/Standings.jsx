@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getDocs, collection, query, where, orderBy, limit } from 'firebase/firestore';
-import { db } from '../../../db/db'
+import { db } from '../../../db/db';
+import Loading from '../Loading';
 
 export default function Standings (props) {
+
+    const team = props.team;
+    const type = props.type;
+    const division = props.division;
 
     const [games, setGames] = useState(null);
     const [teams, setTeams] = useState(null);
@@ -205,7 +210,7 @@ export default function Standings (props) {
 
     return (
         <div className='Standings'>
-            <p>Loading...</p>
+            <Loading />
         </div>
     )
 }

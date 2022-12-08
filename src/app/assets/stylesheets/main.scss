@@ -1,12 +1,15 @@
 @import 'reset';
 @import 'variables';
+@import 'loading';
 @import 'navigation';
+@import 'dashboard';
 @import 'auth';
 @import 'scorecard';
 @import 'fielding';
 @import 'recentGames';
 @import 'standings';
 @import 'games';
+@import 'teams';
 
 body {
     font-family: $primary;

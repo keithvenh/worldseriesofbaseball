@@ -1,0 +1,18 @@
+@import 'variables';
+
+.Home {
+    .Standings {
+        display: flex;
+        background-color: $lightGrey;
+        justify-content: space-evenly;
+    }
+    .conferenceStandings {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        .divisionalStandings {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

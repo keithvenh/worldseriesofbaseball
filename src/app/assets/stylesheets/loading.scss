@@ -1,0 +1,49 @@
+@import 'variables';
+
+.Loading {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 100px 0;
+
+    .appTitle {
+        text-align: center;
+        color: $white;
+        font-family: $title;
+        font-size: 3em;
+        width: 100%;
+    }
+
+    .flagsContainer {
+        overflow: hidden;
+        max-width: 100vw;
+        position: relative;
+    }
+    .flags {
+        display: flex;
+        position: relative;
+        left: 0px;
+        &.flagsBottom {
+            left: -1000px;
+        }
+    }
+
+    .flag {
+        min-width: 12.5vw;
+        height: 8.33vw;
+        display: flex;
+        align-content: center;
+        img {
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+        }
+    }
+}
