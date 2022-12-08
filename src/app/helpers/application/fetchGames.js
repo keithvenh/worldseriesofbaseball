@@ -3,8 +3,6 @@ import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../../db/db';
 
 export default async function fetchGames(teams, result='all') {
-    console.log(teams);
-    console.log("Fetching Games...")
 
     teams = teams.map(t => t.id)
     result = result == 'all' ? [true, false] : result == 'complete' ? [true] : [false]

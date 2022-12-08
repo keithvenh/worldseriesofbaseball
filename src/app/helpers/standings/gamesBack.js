@@ -11,6 +11,6 @@ export default function gamesBack(teams) {
             gb: gb
         }
     })
-    console.log(teamsWithGamesBack);
+
     return teamsWithGamesBack;
 }

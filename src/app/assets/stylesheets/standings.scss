@@ -25,6 +25,10 @@
             background-color: $lightGrey;
             cursor: pointer;
         }
+        &.true {
+            color: $white;
+            background-color: $grey;
+        }
         td {
             padding: 0 6px;
             text-align: center;

@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import Navbar from '../navigation/Navbar';
 import Dashboard from './Dashboard';
+import Loading from '../Loading';
+import { useEffect } from 'react';
 
 export default function Team(props) {
 
-    console.log(props.options)
-    const [view, setView] = useState(<Dashboard />)
-    const team = props.options.team;
+    console.log(props.link);
+    console.log(props.options.team);
+    const [team, setTeam] = useState(null);
+    const [view, setView] = useState(null)
     const navStyle = {
         color: 'black',
         backgroundColor: 'white',
@@ -14,27 +17,41 @@ export default function Team(props) {
         justifyContent: 'space-around'
     }
     
-    function teamView(link) {
+    function teamView(link, options) {
 
         const views = {
-            'dashboard': <Dashboard />,
+            'dashboard': <Dashboard team={options.team} appView={props.appView} />,
             'schedule': null,
             'depthChart': null,
             'lineups': null,
             'stats': null,
             'roster': null
         }
+
+        console.log(link);
+        setView(views['dashboard'])
     }
 
-    return (
-        <div className='Team'>
-            <Navbar 
-                title={team.name}
-                links={['schedule', 'depthChart', 'lineups', 'stats', 'roster']}
-                handler={teamView}
-                style={navStyle}
-            />
-            {view}
-        </div>
-    )
+    console.log(team);
+
+    useEffect(() => {
+        setTeam(props.options.team);
+        teamView(props.link, props.options);
+    }, [])
+
+    if (view) {
+        return (
+            <div className='Team'>
+                <Navbar 
+                    title={team.name}
+                    links={['schedule', 'depthChart', 'lineups', 'stats', 'roster']}
+                    handler={teamView}
+                    style={navStyle}
+                />
+                {view}
+            </div>
+        )
+    }
+
+    return (<Loading />)
 }

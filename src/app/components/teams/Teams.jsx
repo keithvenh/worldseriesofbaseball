@@ -17,13 +17,15 @@ export default function Teams (props) {
 
         const views = {
             list: {teamLinks},
-            team: <Team teamView={teamView} appView={props.appView} options={options} />
+            team: <Team teamView={teamView} appView={props.appView} link={link} options={options} />
         }
 
-        if(link === '') {
+        let pageLink = link.split('/')[1]
+        console.log(pageLink);
+        if(!pageLink) {
             teamView('list');
         } else {
-            setView(views[link])
+            setView(views[pageLink])
             setLink(link)
         }
 
@@ -53,7 +55,7 @@ export default function Teams (props) {
     }
 
     useEffect(() => {
-        teamView(props.options.subview, {team: props.options.team})
+        teamView(props.link, {team: props.options.team})
         fetchTeams();
     }, [])
 

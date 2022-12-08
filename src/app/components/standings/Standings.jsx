@@ -17,7 +17,6 @@ export default function Standings(props) {
         fetchTeams(props.divisions).then((fetchedTeams) => {
             fetchGames(fetchedTeams).then((fetchedGames) => {
                 let finalStandings = calculateStandings(fetchedTeams, fetchedGames);
-                console.log(finalStandings);
                 setStandings(finalStandings);
             }
             )
@@ -34,7 +33,7 @@ export default function Standings(props) {
     
                 <tbody>
 
-                    {standings.map((team) => <StandingsRow key={team.id} team={team} appView={props.appView}/>)}
+                    {standings.map((team) => <StandingsRow key={team.id} team={team} appView={props.appView} currentTeam={props.team}/>)}
     
                 </tbody>
 

@@ -17,10 +17,8 @@ import Navbar from './navigation/Navbar';
 export default function App() {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState();
-  const [profile, setProfile] = useState();
-  const [view, setView] = useState(<Loading />);
-  const [link, setLink] = useState('loading');
+  const [view, setView] = useState();
+  const [activeLink, setActiveLink] = useState();
 
   function appView(link, options = {subview: ''}) {
 
@@ -31,17 +29,21 @@ export default function App() {
       fielding: <Fielding />,
       games: <Games appView={appView} options={options} />,
       game: <Game appView={appView} options={options} />,
-      teams: <Teams appView={appView} options={options} />,
+      teams: <Teams key={link} appView={appView} link={link} options={options} />,
       team: <Team appView={appView} options={options} />
     }
 
-    setView(views[link]);
-    setLink(link);
+    let pageLink = link.split('/')[0]
+    setView(views[pageLink]);
+    setActiveLink(link);
   }
 
   if (initializing) {
-    setInitializing(false);
-    appView('home');
+    setTimeout(() => {
+      setInitializing(false);
+      appView('home');
+    }, 2500);
+
     return (
       <div className='App'>
         <Loading />
@@ -55,8 +57,10 @@ export default function App() {
           title='World Series of Baseball'
           links={['dashboard', 'games', 'teams', 'fielding']}
           handler={appView}
+          activeLink={activeLink}
       />
       {view}
+      <p>{activeLink}</p>
     </div>
   );
 }
