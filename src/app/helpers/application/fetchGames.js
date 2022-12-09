@@ -5,12 +5,18 @@ import { db } from '../../../db/db';
 export default async function fetchGames(teams, result='all') {
 
     teams = teams.map(t => t.id)
-    result = result == 'all' ? [true, false] : result == 'complete' ? [true] : [false]
-
     let gamesRef = collection (db, "leagues/1/games");
-    const q = query(gamesRef, where('final', 'in', result))
+    let q = query(gamesRef)
+    
+    if(result === 'complete') {
+        q = query(gamesRef, where('final', '==', true))
+    }
+
     let games = await getDocs(q);
     games = games.docs.map(doc => doc.data())
+    if (result === 'incomplete') {
+        games = games.filter(g => !g.final)
+    }
     games = games.filter(g => (teams.includes(g.visitor) || teams.includes(g.home)))
 
     return games;

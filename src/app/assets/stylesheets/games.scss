@@ -1,5 +1,56 @@
 @import 'variables';
 
+.recentGames, .upcomingGames {
+    height: 75px;
+    position: relative;
+    display: flex;
+    .label {
+        transform-origin: 0 0;
+        transform: rotate(270deg);
+        height: 24px;
+        width: 75px;
+        background-color: $black;
+        color: $white;
+        position: relative;
+        margin-bottom: -24px;
+        box-sizing: border-box;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 0.8em;
+        top: 75px;
+        margin-right: -50px;
+    }
+}
+
+.gameQuickLook {
+    border-right: 1px solid $grey;
+    &:hover {
+        cursor: pointer;
+    }
+    th {
+        font-weight: bold;
+        font-size: 0.8em;
+        padding: 3px 6px 1px 6px;
+        height: 21px;
+        box-sizing: border-box;
+        line-height: 21px;
+    }
+    td {
+        text-align: center;
+        padding: 3px 6px 3px 6px;
+        box-sizing: border-box;
+        height: 20px;
+        &.teamName {
+            text-align: left;
+            padding: 3px 12px;
+        }
+    }
+    tr.true {
+        font-weight: bold;
+    }
+}
 .Games {
     display: flex;
     flex-wrap: wrap;

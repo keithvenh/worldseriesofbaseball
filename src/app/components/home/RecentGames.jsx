@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getDocs, collection, query, where, orderBy, limit } from 'firebase/firestore';
 import { db } from '../../../db/db'
+import fetchGames from '../../helpers/application/fetchGames';
+import fetchTeams from '../../helpers/application/fetchTeams';
 import Game from '../games/Game';
 
 export default function RecentGames (props) {
@@ -26,7 +28,7 @@ export default function RecentGames (props) {
     } 
 
     useEffect(() => {
-        fetchGames();
+        setGames(fetchGames(fetchTeams('all'), 'complete'));
     },[])
 
     function getRecord(team, game = 1000) {
@@ -37,6 +39,7 @@ export default function RecentGames (props) {
     }
 
     if(games) {
+        console.log(games);
         return (
             <div className='RecentGames'>
                 {games.map((g) => {

@@ -1,8 +1,8 @@
 @import 'variables';
 
 .navbar {
-    background-color: black;
-    color: white;
+    background-color: $black;
+    color: $white;
     display: flex;
     height: 70px;
     justify-content: space-between;

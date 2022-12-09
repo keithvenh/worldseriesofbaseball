@@ -1,5 +1,7 @@
 
-export default function calculateRecords(teams, games) {
+export default function calculateRecords(teams, games, asOfGame=1000) {
+
+    games = games.filter(g => g.id <= asOfGame)
     let teamsRecords = teams.map(t => {
         const wins = games.filter(g => g.winTeam === t.id).length;
         const losses = games.filter(g => g.loseTeam === t.id).length;

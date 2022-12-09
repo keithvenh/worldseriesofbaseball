@@ -60,7 +60,6 @@ export default function App() {
           activeLink={activeLink}
       />
       {view}
-      <p>{activeLink}</p>
     </div>
   );
 }
