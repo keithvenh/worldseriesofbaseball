@@ -6,18 +6,27 @@ export default function Roster(props) {
 
     const [mode, setMode] = useState(null);
     const [players, setPlayers] = useState(null);
-    const [allPlayers, setAllPlayers] = useState([{id: 1, nameDisplay: "Fake Player"}]);
+    const [allPlayers, setAllPlayers] = useState(null);
     const [initializing, setInitializing] = useState(true);
-    const [playerSelectors, setPlayerSelectors] = useState([])
+    const [playerSelectors, setPlayerSelectors] = useState([]);
+
+    function changeHandler(event) {
+        let player = allPlayers.find(p => p.id === parseInt(event.target.value));
+        setPlayers({
+            ...players,
+            [player.id]: player
+        })
+        console.log(playerSelectors)
+        playerSelectors.splice(event.target.id, 1);
+        console.log(playerSelectors);
+        setPlayerSelectors([...playerSelectors])
+    }
 
     function addPlayerSlot() {
-        console.log(playerSelectors);
-        console.log(allPlayers);
         const playerSelector = (
-            <select className='playerSelector'>
-                <option disabled selected key='select'>Select Player</option>
+            <select id={playerSelectors.length} key={playerSelectors.length} defaultValue='select' onChange={e => changeHandler(e)} className='playerSelector'>
+                <option disabled key='select' value='select'>Select Player</option>
                 {allPlayers.map(p => {
-                    console.log(p)
                     return <option key={p.id} value={p.id}>{p.nameDisplayLastFirst}</option>
                 })}
             </select>
@@ -28,12 +37,21 @@ export default function Roster(props) {
     async function initialize() {
         const allPlayers = await fetchPlayers('all');
         if(props.team.roster.players) {
-            setPlayers([...props.team.roster.players])
+            setPlayers(props.team.roster.players)
         } else {
             setPlayers([])
         }
         setAllPlayers(allPlayers);
         setInitializing(false);
+    }
+
+    function displayPlayers() {
+        let playersDisplay = Object.keys(players).map((player, index) => {
+            console.log(players[player].nameDisplayLastFirst)
+            return <p key={player}>{players[player].nameDisplayLastFirst}</p>
+        })
+
+        return playersDisplay;
     }
 
     if(initializing) {
@@ -47,6 +65,8 @@ export default function Roster(props) {
                 <div className="Roster">
                     <p>Roster Edit Page</p>
                     <div id='editRoster'>
+                        {displayPlayers()}
+                        <hr />
                         {playerSelectors}
                     </div>
                     <div id='addButtom' className='button add' onClick={addPlayerSlot}><i className='fa-solid fa-circle-plus'></i></div>
