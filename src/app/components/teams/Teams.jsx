@@ -21,7 +21,6 @@ export default function Teams (props) {
         }
 
         let pageLink = link.split('/')[1]
-        console.log(pageLink);
         if(!pageLink) {
             teamView('list');
         } else {

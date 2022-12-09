@@ -12,7 +12,6 @@ export default function RecentGames(props) {
         games = games.sort((a,b) => b.id - a.id);
         const lastGame = games[0].id
         games = games.filter(g => g.id > lastGame - props.count)
-        console.log(games);
         setRecentGames(games);
     }
 

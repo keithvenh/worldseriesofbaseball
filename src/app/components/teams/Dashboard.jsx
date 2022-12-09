@@ -5,7 +5,6 @@ import RecentGames from '../games/RecentGames';
 
 export default function Dashboard(props) {
 
-    console.log(props);
     return (
         <div className='Dashboard teamDashboard'>
             <div className='gamesBar'>

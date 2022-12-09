@@ -3,13 +3,14 @@ import Navbar from '../navigation/Navbar';
 import Dashboard from './Dashboard';
 import Loading from '../Loading';
 import { useEffect } from 'react';
+import Roster from './roster/Roster';
 
 export default function Team(props) {
 
-    console.log(props.link);
-    console.log(props.options.team);
     const [team, setTeam] = useState(null);
-    const [view, setView] = useState(null)
+    const [view, setView] = useState(null);
+    const [activeLink, setActiveLink] = useState(null);
+
     const navStyle = {
         color: 'black',
         backgroundColor: 'white',
@@ -25,14 +26,14 @@ export default function Team(props) {
             'depthChart': null,
             'lineups': null,
             'stats': null,
-            'roster': null
+            'roster': <Roster team={options.team} appView={props.appView} />
         }
 
-        console.log(link);
-        setView(views['dashboard'])
+        link = link.split('/')
+        link = link[link.length - 1]
+        setView(views[link])
+        setActiveLink(link)
     }
-
-    console.log(team);
 
     useEffect(() => {
         setTeam(props.options.team);
@@ -44,9 +45,11 @@ export default function Team(props) {
             <div className='Team'>
                 <Navbar 
                     title={team.name}
-                    links={['schedule', 'depthChart', 'lineups', 'stats', 'roster']}
+                    links={['dashboard', 'schedule', 'depthChart', 'lineups', 'stats', 'roster']}
                     handler={teamView}
                     style={navStyle}
+                    options={props.options}
+                    activeLink={activeLink}
                 />
                 {view}
             </div>

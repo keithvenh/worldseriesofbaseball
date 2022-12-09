@@ -39,7 +39,7 @@ export default function RecentGames (props) {
     }
 
     if(games) {
-        console.log(games);
+
         return (
             <div className='RecentGames'>
                 {games.map((g) => {
