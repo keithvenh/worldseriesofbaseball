@@ -17,7 +17,7 @@ export default function App() {
     const views = {
       dashboard: <Home appView={appView} />,
       fielding: <Fielding />,
-      games: <Games appView={appView} options={options} />,
+      games: <Games key={link} appView={appView} link={link} options={options} />,
       teams: <Teams key={link} appView={appView} link={link} options={options} />
     }
 

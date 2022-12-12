@@ -6,7 +6,7 @@ import Lineup from './Lineup';
 
 export default function Game(props) {
 
-    const [game, setGame] = useState(props.options.game);
+    const [game, setGame] = useState(props.game);
     const [mode, setMode] = useState('view');
     const [teams, setTeams] = useState(null);
     const [games, setGames] = useState(null);

@@ -3,7 +3,6 @@ import { collection, query, getDocs } from 'firebase/firestore';
 import { db } from '../../../db/db';
 
 import Loading from '../Loading';
-import Navbar from '../navigation/Navbar';
 import Team from './Team';
 
 export default function Teams (props) {
