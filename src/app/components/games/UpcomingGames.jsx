@@ -30,7 +30,7 @@ export default function UpcomingGames(props) {
                     const vis = teams.find(t => t.id == g.visitor);
                     const home = teams.find(t => t.id == g.home)
                     return(
-                        <table key={g.id} className='gameQuickLook' onClick={() => props.appView('game', {game: g})}>
+                        <table key={g.id} className='gameQuickLook' onClick={() => props.appView('games/game', {game: g})}>
 
                             <thead>
 

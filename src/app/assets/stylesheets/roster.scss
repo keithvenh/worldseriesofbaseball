@@ -1,0 +1,88 @@
+@import 'variables';
+// ========== EDIT PAGE ========== //
+.Roster {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px;
+    hr {
+        width: 20vw;
+        border-top: 2px solid black;
+    }
+    .rosterHeader {
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 6px 12px;
+    }
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        .button {
+            margin: 12px 24px;
+            padding: 6px 24px;
+            font-size: 20px;
+            border-radius: 5px;
+            color: white;
+            &:hover {
+                cursor: pointer;
+                opacity: 0.85;
+            }
+            &.save {
+                background-color: green;
+            }
+            &.back {
+                background-color: red;
+            }
+            &.edit {
+                background-color: black;
+            }
+            i {
+                margin-right: 6px;
+            }
+        }
+    }
+}
+.activePlayer {
+    display: flex;
+    padding: 0 6px;
+    &:nth-child(odd) {
+        background-color: $lightGrey;
+    }
+    p {
+        padding: 6px;
+        font-size: 18px;
+        width: 10vw;
+        text-align: left;
+    }
+    .button.remove {
+        color: red;
+        padding: 6px;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.85;
+        }
+    }
+}
+
+.playerSelect {
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+    select {
+        padding: 6px;
+    }
+    .button.add {
+        color: green;
+        padding: 6px;
+        padding-left: 12px;
+        font-size: 24px;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    }
+}
