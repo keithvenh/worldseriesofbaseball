@@ -32,3 +32,38 @@
 .teamInfo {
     display: flex;
 }
+
+// =========== SCHEDULE ========== //
+.teamGame {
+    display: flex;
+    &:hover {
+        cursor: pointer;
+    }
+    &:nth-child(even) {
+        background-color: $lightGrey;
+    }
+    &.finaltrue {
+        .gameID {
+            font-weight: bold;
+        }
+    }
+
+    p {
+        padding: 6px 12px;
+        text-align: center;
+        width: 50px;
+    }
+
+    .wintrue {
+        font-weight: bold;
+    }
+
+    .gameID {
+        text-align: left;
+        width: 65px;
+    }
+
+    .final {
+        display: flex;
+    }
+}
