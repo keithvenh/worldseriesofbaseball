@@ -210,7 +210,7 @@ export default function Standings (props) {
 
     return (
         <div className='Standings'>
-            <Loading />
+            Loading...
         </div>
     )
 }

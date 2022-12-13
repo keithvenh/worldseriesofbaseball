@@ -30,7 +30,7 @@ export default function App() {
     setTimeout(() => {
       setInitializing(false);
       appView('dashboard');
-    }, 2500);
+    }, 5000);
 
     return (
       <div className='App'>
@@ -46,7 +46,7 @@ export default function App() {
           titleLink='dashboard'
           links={['dashboard', 'games', 'teams', 'fielding']}
           handler={appView}
-          activeLink={activeLink}
+          activeLink={activeLink.split('/')[0]}
           options={{}}
       />
       {view}

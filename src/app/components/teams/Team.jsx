@@ -4,6 +4,7 @@ import Loading from '../Loading';
 import Navbar from '../navigation/Navbar';
 import Dashboard from './Dashboard';
 import Schedule from './Schedule';
+import DepthChart from './roster/depthChart/DepthChart';
 import Roster from './roster/Roster';
 
 export default function Team(props) {
@@ -24,7 +25,7 @@ export default function Team(props) {
         const views = {
             'dashboard': <Dashboard team={options.team} appView={props.appView} />,
             'schedule': <Schedule team={options.team} appView={props.appView} />,
-            'depthChart': null,
+            'depthChart': <DepthChart team={options.team} appView={props.appView} />,
             'lineups': null,
             'stats': null,
             'roster': <Roster team={options.team} appView={props.appView} />

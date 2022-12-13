@@ -2,7 +2,14 @@ import { useEffect } from 'react';
 
 export default function Loading() {
 
-    let teams = ['egy', 'nig', 'mor', 'saf', 'ken', 'spa', 'ita', 'eeu', 'ukg', 'neu', 'usa', 'car', 'mex', 'cam', 'can']
+    let teams = [
+        'egy', 'nig', 'mor', 'saf', 'ken', 
+        'spa', 'ita', 'eeu', 'ukg', 'neu', 
+        'usa', 'car', 'mex', 'cam', 'can', 
+        'aus', 'mic', 'pol', 'mel', 'nze', 
+        'per', 'bra', 'col', 'arg', 'ven', 
+        'jap', 'uae', 'chi', 'ind', 'rus'
+    ]
     function animateFlags(flagID, direction) {
         let id = null;
         const flags = document.getElementById(flagID);
@@ -11,11 +18,11 @@ export default function Loading() {
         if (direction === 'left') {
             id = setInterval(scrollLeft, 5);
         } else if (direction === 'right') {
-            pos = -1150;
+            pos = -4600;
             id = setInterval(scrollRight, 5);
         }
         function scrollLeft() {
-            if(pos < -1150) {
+            if(pos < -4600) {
                 clearInterval(id);
             } else {
                 pos--;
