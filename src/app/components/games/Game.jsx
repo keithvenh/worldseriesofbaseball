@@ -3,6 +3,7 @@ import { updateDoc, doc, getDoc, collection, getDocs, query } from 'firebase/fir
 import { db } from '../../../db/db';
 import Scorecard from '../scorecard/Scorecard';
 import Lineup from './Lineup';
+import { useParams, Link } from "react-router-dom";
 
 export default function Game(props) {
 
@@ -18,6 +19,7 @@ export default function Game(props) {
     });
     const visFlag = require('../../assets/images/' + game.visitor + '.webp')
     const homeFlag = require('../../assets/images/' + game.home + '.webp')
+    const {id} = useParams();
 
     function updateGameStats(e) {
         e.preventDefault();

@@ -42,8 +42,4 @@ export default function Standings(props) {
             </table>
         )
     }
-
-    return (
-        <Loading />
-    )
 }

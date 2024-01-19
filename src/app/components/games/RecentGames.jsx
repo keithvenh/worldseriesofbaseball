@@ -64,8 +64,4 @@ export default function RecentGames(props) {
             </div>
         )
     }
-
-    return (
-        <p>Loading...</p>
-    )
 }

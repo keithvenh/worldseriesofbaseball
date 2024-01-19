@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import Loading from '../Loading';
-import Navbar from '../navigation/Navbar';
+import Navbar from '../header/navigation/Navbar';
 import Dashboard from './Dashboard';
 import Schedule from './Schedule';
 import DepthChart from './roster/depthChart/DepthChart';

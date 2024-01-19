@@ -207,10 +207,4 @@ export default function Standings (props) {
             </div>
         )
     }
-
-    return (
-        <div className='Standings'>
-            Loading...
-        </div>
-    )
 }
