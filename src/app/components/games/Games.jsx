@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { collection, query, orderBy, getDocs } from 'firebase/firestore';
-import { db } from '../../../db/db';
+import { db } from '../../../db/db.js';
 
 import Game from './Game';
 import Loading from '../Loading';

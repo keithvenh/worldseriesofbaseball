@@ -1,0 +1,31 @@
+id,region_id,team,abbr,city,country
+1,1,Egypt,egy,Cairo,Egypt
+2,1,Nigeria,nig,Lagos,Ethiopia
+3,1,Kenya,ken,Nairobi,Kenya
+4,1,Morocco,mor,Casablanca,Morocco
+5,1,South Africa,saf,Cape Town,South Africa
+6,2,China,chi,Shanghai,China
+7,2,India,ind,New Delhi,India
+8,2,Japan,jap,Tokyo,Japan
+9,2,Russia,rus,Moscow,Russia
+10,2,United Arab Emirates,uae,Dubai,United Arab Emirates
+11,3,Australia,aus,Sydney,Australia
+12,3,Melanesia,mel,Suva,Fiji
+13,3,New Zealand,nze,Queenstown,New Zealand
+14,3,Micronesia,mic,Hagatna,Guam
+15,3,Polynesia,pol,Apia,Samoa
+16,4,France,fra,Paris,France
+17,4,Germany,ger,Munich,Germany
+18,4,Italy,ita,Rome,Italy
+19,4,Spain,spa,Barcelona,Spain
+20,4,United Kingdom,ukg,London,England
+21,5,Canada,can,Vancouver,Canada
+22,5,Caribbean,car,Havana,Cuba
+23,5,Central America,cam,San Jose,Costa Rica
+24,5,Mexico,mex,Mexico City,Mexico
+25,5,United States,usa,"Chicago, Illinois",United States
+26,6,Argentina,arg,Buenos Aires,Argentina
+27,6,Brazil,bra,Rio de Janeiro,Brazil
+28,6,Colombia,col,Bogota,Colombia
+29,6,Peru,per,Lima,Peru
+30,6,Venezuela,ven,Caracas,Venezuela

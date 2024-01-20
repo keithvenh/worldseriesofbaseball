@@ -1,6 +1,6 @@
 import { collection, query, getDocs, where } from 'firebase/firestore';
 
-import { db } from '../../../db/db';
+import { db } from '../../../db/db.js';
 
 export default async function fetchTeams(divisions) {
 

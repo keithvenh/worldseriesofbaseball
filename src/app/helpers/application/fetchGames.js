@@ -1,6 +1,6 @@
 
 import { getDocs, collection, query, where } from 'firebase/firestore';
-import { db } from '../../../db/db';
+import { db } from '../../../db/db.js';
 
 export default async function fetchGames(teams, result='all') {
 

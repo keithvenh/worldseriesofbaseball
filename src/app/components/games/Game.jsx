@@ -1,6 +1,6 @@
 import {useState, useEffect } from 'react';
 import { updateDoc, doc, getDoc, collection, getDocs, query } from 'firebase/firestore';
-import { db } from '../../../db/db';
+import { db } from '../../../db/db.js';
 import Scorecard from '../scorecard/Scorecard';
 import Lineup from './Lineup';
 import { useParams, Link } from "react-router-dom";

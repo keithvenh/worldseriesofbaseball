@@ -1,7 +1,8 @@
 @import 'reset';
 @import 'variables';
 @import 'header';
-// @import 'loading';
+@import 'teams';
+@import 'loading';
 // @import 'navigation';
 // @import 'dashboard';
 // @import 'auth';
@@ -10,16 +11,9 @@
 // @import 'recentGames';
 // @import 'standings';
 // @import 'games';
-// @import 'teams';
 // @import 'roster';
 
 body {
     font-family: $primary;
-}
-
-.App {
-    background-color: white;
-    height: calc(100vh - 70px);
-    width: 100vw;
-    box-sizing: border-box;
+    background-color: darken($white, 3%);
 }

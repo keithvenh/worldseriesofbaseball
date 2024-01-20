@@ -1,5 +1,5 @@
 import { updateDoc, doc } from "firebase/firestore";
-import { db } from '../../../db/db';
+import { db } from '../../../db/db.js';
 
 export default async function updateRecords(teams) {
     for(let i = 0; i < teams.length; i++) {

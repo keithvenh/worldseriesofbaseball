@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getDocs, collection, query, where, orderBy, limit } from 'firebase/firestore';
-import { db } from '../../../db/db';
+import { db } from '../../../db/db.js';
 import Loading from '../Loading';
 
 export default function Standings (props) {
