@@ -20,7 +20,10 @@ export async function fetchTeam(id) {
   const docSnap = await getDoc(teamRef);
 
   if (docSnap.exists()) {
-    return docSnap.data();
+    return {
+      id: teamRef.id,
+      ...docSnap.data()
+    }
   } else {
     console.log("No Document");
   }

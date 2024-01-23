@@ -1,7 +1,9 @@
 @import 'reset';
 @import 'variables';
 @import 'header';
-@import 'teams';
+
+// ===== TEAM STYLES ===== //
+@import 'teams/teamIndex';
 @import 'loading';
 // @import 'navigation';
 // @import 'dashboard';

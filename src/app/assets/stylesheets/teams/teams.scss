@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../variables';
 
 .teams {
     padding: 2em 0;
@@ -66,26 +66,5 @@
     }
     .division {
         margin-top: 3px;
-    }
-}
-
-// ========== TEAM PAGE ========== //
-.teamHeader {
-    display: flex;
-    overflow: hidden;
-    height: 25vh;
-    width: 100vw;
-    border-bottom: 10px solid $black;
-    box-shadow: 0px 2px 3px $grey;
-    .teamInfo {
-        flex-grow: 1;
-    }
-    .teamFlag {
-        width: 33%;
-        background-position: center center;
-        background-size: cover;
-        border-left: 20px solid $black;
-        transform: skewX(-15deg);
-        margin-right: -12.5vh;
     }
 }

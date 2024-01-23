@@ -1,9 +1,10 @@
 import { useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Routes, Route } from 'react-router-dom';
 
 import { fetchTeam } from '../../../db/fetchTeams';
 
 import Loading from '../Loading';
+import Schedule from './Schedule';
 
 export default function Team() {
     const [initializing, setInitializing] = useState(true);
@@ -13,7 +14,6 @@ export default function Team() {
 
     useEffect(() => {
         fetchTeam(id).then(team => {
-            console.log(team);
             setTeam(team);
             setInitializing(false);
         });
@@ -25,12 +25,30 @@ export default function Team() {
     return (
         <section className='team'>
             <div className='teamHeader'>
-                <div className='teamInfo'>{team.name}</div>
-                <div className='divider'></div>
-                <div className='teamFlag' style={{'backgroundImage': `url(${teamImage})`}}></div>
+                <div className='teamInfo'>
+                    <h1 className='teamName'>{team.name}</h1>
+                    <p className='rank'>#st {team.division}</p>
+                    <p className='record'>{team.wins} - {team.losses}</p>
+                </div>
+                <div className='teamFlag' style={{'backgroundColor': `#${team.colors.primary}`, 'borderColor': `#${team.colors.secondary}`}}>
+                    <p className='teamNameBackground' style={{'color': `rgba(0,0,0,0.1)`}}>{team.name}</p>
+                    <p className='teamNameBackground'>{team.name}</p>
+                    <img src={teamImage} alt={`${team.country} Flag`} style={{'borderColor': `#${'fafafa'}`}}/>
+                </div>
             </div>
-            <div className='teamCards'>
-                {team.name}
+            <div className='teamNavbar'>
+                <Link to={`/teams/${team.id}/schedule`}>Schedule</Link>
+                <Link to={`/teams/${team.id}/roster`}>Roster</Link>
+                <Link to={`/teams/${team.id}/team-stats`}>Team Stats</Link>
+                <Link to={`/teams/${team.id}/player-stats`}>Player Stats</Link>
+            </div>
+            <div className='teamSection'>
+                <Routes>
+                    <Route path="schedule" element={<Schedule />} />
+                    <Route path="roster" element={<Schedule />} />
+                    <Route path="team-stats" element={<Schedule />} />
+                    <Route path="player-stats" element={<Schedule />} />
+                </Routes>
             </div>
         </section>
     )
