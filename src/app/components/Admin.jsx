@@ -1,7 +1,7 @@
-import seedTeams from '../../db/seedTeams';
+import seedGames from '../../db/seedGames';
 
 export default function Admin() {
   return (
-    <button onClick={seedTeams}>Seed Teams</button>
+    <button onClick={seedGames}>Seed Games</button>
   )
 }

@@ -1,1 +1,14 @@
 @import 'variables';
+
+.gamesBar {
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  .recentGames {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .upcomingGames {
+    display: flex;
+  }
+}

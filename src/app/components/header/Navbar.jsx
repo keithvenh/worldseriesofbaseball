@@ -4,11 +4,11 @@ export default function Navbar (props) {
 
     return (
         <nav className='navbar' style={props.style}>
-            <NavLink to="/games" activeClassName='active'>Scores</NavLink>
-            <NavLink to="/teams" activeClassName='active'>Teams</NavLink>
-            <NavLink to="/players" activeClassName='active'>Players</NavLink>
-            <NavLink to="/leaders" activeClassName='active'>League Leaders</NavLink>
-            <NavLink to='/stats' activeClassName='active'>Stats</NavLink>
+            <NavLink to="/games">Scores</NavLink>
+            <NavLink to="/teams">Teams</NavLink>
+            <NavLink to="/players">Players</NavLink>
+            <NavLink to="/leaders">League Leaders</NavLink>
+            <NavLink to='/stats'>Stats</NavLink>
         </nav>
     )
 }

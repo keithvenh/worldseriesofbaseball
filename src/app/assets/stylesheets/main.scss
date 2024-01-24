@@ -1,10 +1,19 @@
 @import 'reset';
 @import 'variables';
+
+// ===== SITE STYLES ===== //
 @import 'header';
+
+// ===== HOME STYLES ===== //
+@import 'home';
 
 // ===== TEAM STYLES ===== //
 @import 'teams/teamIndex';
 @import 'loading';
+
+// ===== GAME STYLES ===== //
+@import 'games/summary';
+
 // @import 'navigation';
 // @import 'dashboard';
 // @import 'auth';

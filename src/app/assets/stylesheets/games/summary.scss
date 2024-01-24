@@ -1,0 +1,28 @@
+.gameSummary {
+  border-right: 1px solid $lightGrey;
+  border-left: 1px solid $lightGrey;
+  margin: 6px 0;
+  th {
+    padding: 8px 12px;
+    font-weight: bold;
+  }
+  td {
+    padding: 3px 12px;
+    text-align: center;
+    &.team {
+      text-align: left;
+    }
+  }
+  tr {
+    &.winner {
+      td {
+        font-weight: 700;
+      }
+    }
+    &.loser {
+      td {
+        font-weight: 200;
+      }
+    }
+  }
+}

@@ -1,16 +1,16 @@
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import RecentGames from '../games/RecentGames';
+import UpcomingGames from '../games/UpcomingGames';
+
 import Standings from '../standings/Standings';
 import Loading from '../Loading';
-import UpcomingGames from '../games/UpcomingGames';
 
 export default function Home(props) {
 
     return (
       <div className='Home'>
         <div className='gamesBar'>
-          <UpcomingGames teams='all' count={4} appView={props.appView} />
-          <RecentGames teams='all' count={5} appView={props.appView}/>
+          <RecentGames />
+          <UpcomingGames />
         </div>
         <div className='Standings'>
           <div className='conferenceStandings'>
