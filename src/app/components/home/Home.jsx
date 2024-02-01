@@ -4,15 +4,15 @@ import apiUrl from '../../helpers/apiUrl';
 import RecentGames from '../games/RecentGames';
 import UpcomingGames from '../games/UpcomingGames';
 import Standings from '../standings/Standings';
+import GamesBar from '../games/GamesBar';
 
 export default function Home() {
 
     return (
       <div className='Home'>
-        <div className='gamesBar'>
-          <RecentGames />
-          <UpcomingGames />
-        </div>
+
+        <GamesBar />
+
         <section className='homeSection'>
           <div className='standings'>
             <Standings 
@@ -24,7 +24,9 @@ export default function Home() {
               title='Western Conference Standings'
             />
           </div>
+
           <div className='leagueInfo'></div>
+          
           <div className='standings'>
             <Standings 
               league='wsob'
@@ -36,6 +38,7 @@ export default function Home() {
             />
           </div>
         </section>
+
       </div>
     )
 }

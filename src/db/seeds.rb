@@ -5,5 +5,6 @@
 
 # ===== COMPLETE ===== #
 # --- SEED WSO 2024 GAMES --- #
-# require_relative './seeds/games/seed_games.rb'
+require_relative './seeds/games/seed_games.rb'
 # seed_games('./seeds/games/wsob2024-games.csv', 'wsob2024')
+update_games('./seeds/games/wsob2024-games.csv')
