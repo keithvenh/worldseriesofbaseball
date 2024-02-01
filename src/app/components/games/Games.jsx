@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { collection, query, orderBy, getDocs } from 'firebase/firestore';
-import { db } from '../../../db/db.js';
+import { firestoreDB } from '../../../db/db.js';
 
 import Game from './Game';
 import Loading from '../Loading';
@@ -29,7 +29,7 @@ export default function Games(props) {
 
     async function fetchGames() {
 
-        let gamesRef = collection(db, "leagues/1/games")
+        let gamesRef = collection(firestoreDB, "leagues/1/games")
         const q = query(gamesRef, orderBy("id", "asc"));
         const querySnapshot = await getDocs(q);
         let orderedGames = querySnapshot.docs.map((doc) => {

@@ -1,0 +1,51 @@
+@import '../variables';
+
+.adminFormField {
+  display: flex;
+  margin: 12px;
+  justify-content: center;
+  .adminInputLabel {
+    background-color: $lightGrey;
+    padding: 6px 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+  .admingInput {
+    background-color: $white;
+    padding: 6px 12px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  .adminInputValidator {
+    color: darken(yellow, 5%);
+    background-color: $lightGrey;
+    padding: 6px 12px;
+    font-size: 20px;
+    .valid {
+      color: lighten(green, 10%);
+    }
+    .invalid {
+      color: darken(red, 10%);
+    }
+  }
+}
+
+.adminFormControls {
+  display: flex;
+  justify-content: center;
+  button {
+    padding: 12px;
+    background: none;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    &.next {
+      background-color: green;
+      color: white;
+    }
+  }
+}

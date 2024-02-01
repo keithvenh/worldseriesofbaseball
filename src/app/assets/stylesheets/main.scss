@@ -14,17 +14,24 @@
 // ===== GAME STYLES ===== //
 @import 'games/summary';
 
+// ===== STANDINGS STYLES ===== //
+@import 'standings/standings';
+
+// ===== ADMIN STYLES ===== //
+@import 'admin/admin';
+@import 'admin/password';
+@import 'admin/forms';
+
 // @import 'navigation';
 // @import 'dashboard';
 // @import 'auth';
 // @import 'scorecard';
 // @import 'fielding';
 // @import 'recentGames';
-// @import 'standings';
 // @import 'games';
 // @import 'roster';
 
 body {
     font-family: $primary;
-    background-color: darken($white, 3%);
+    background-color: darken($white, 5%);
 }

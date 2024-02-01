@@ -1,0 +1,47 @@
+@import '../variables.scss';
+
+.standings {
+  flex: 0 0 1;
+  margin: 0 20px;
+}
+
+.standingsTable {
+
+  .standingsTableTitle {
+    background-color: $darkNavy;
+    color: $white;
+    font-weight: 700;
+    padding: 8px;
+    letter-spacing: 1px;
+  }
+
+  .standingsHeader {
+    background-color: $darkNavy;
+    color: $white;
+    th {
+      padding: 8px;
+      border-top: 2px solid $grey;
+    }
+  }
+
+  .standingsData {
+    &:nth-child(odd) {
+      background-color: $white;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($lightNavy, 0.1);
+    }
+    td {
+      border-bottom: 1px solid $grey;
+      padding: 8px;
+      text-align: center;
+      &.teamName {
+        text-align: left;
+        color: $darkNavy;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

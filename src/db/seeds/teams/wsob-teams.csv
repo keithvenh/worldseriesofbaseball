@@ -1,0 +1,31 @@
+id,name,nickname,city,country,logo_url,firebase_ref,division_id,conference_id,league_id
+arg,Argentina,arg,Buenos Aires,Argentina,arg.webp,teams/arg,sam,west,wsob
+aus,Australia,aus,Sydney,Australia,aus.webp,teams/aus,oce,east,wsob
+bra,Brazil,bra,Rio de Janeiro,Brazil,bra.webp,teams/bra,sam,west,wsob
+can,Canada,can,Vancouver,Canada,can.webp,teams/can,nam,west,wsob
+car,Caribbean,car,Havana,Cuba,car.webp,teams/car,nam,west,wsob
+cam,Central America,cam,San Jose,Costa Rica,cam.webp,teams/cam,nam,west,wsob
+chi,China,chi,Shanghai,China,chi.webp,teams/chi,asi,east,wsob
+col,Colombia,col,Bogota,Colombia,col.webp,teams/col,sam,west,wsob
+eeu,Eastern Europe,eeu,Prague,Czech Republic,eeu.webp,teams/eeu,eur,west,wsob
+egy,Egypt,egy,Cairo,Egypt,egy.webp,teams/egy,afr,east,wsob
+ind,India,ind,New Delhi,India,ind.webp,teams/ind,asi,east,wsob
+ita,Italy,ita,Rome,Italy,ita.webp,teams/ita,eur,west,wsob
+jap,Japan,jap,Tokyo,Japan,jap.webp,teams/jap,asi,east,wsob
+ken,Kenya,ken,Nairobi,Kenya,ken.webp,teams/ken,afr,east,wsob
+mel,Melanesia,mel,Suva,Fiji,mel.webp,teams/mel,oce,east,wsob
+mex,Mexico,mex,Mexico City,Mexico,mex.webp,teams/mex,nam,west,wsob
+mic,Micronesia,mic,Hagatna,Guam,mic.webp,teams/mic,oce,east,wsob
+mor,Morocco,mor,Casablanca,Morocco,mor.webp,teams/mor,afr,east,wsob
+nze,New Zealand,nze,Queenstown,New Zealand,nze.webp,teams/nze,oce,east,wsob
+nig,Nigeria,nig,Lagos,Ethiopia,nig.webp,teams/nig,afr,east,wsob
+neu,Northern Europe,neu,Oslo,Norway,neu.webp,teams/neu,eur,west,wsob
+per,Peru,per,Lima,Peru,per.webp,teams/per,sam,west,wsob
+pol,Polynesia,pol,Apia,Samoa,pol.webp,teams/pol,oce,east,wsob
+rus,Russia,rus,Moscow,Russia,rus.webp,teams/rus,asi,east,wsob
+saf,South Africa,saf,Cape Town,South Africa,saf.webp,teams/saf,afr,east,wsob
+spa,Spain,spa,Barcelona,Spain,spa.webp,teams/spa,eur,west,wsob
+uae,United Arab Emirates,uae,Dubai,United Arab Emirates,uae.webp,teams/uae,asi,east,wsob
+ukg,United Kingdom,ukg,London,England,ukg.webp,teams/ukg,eur,west,wsob
+usa,United States,usa,"Chicago, Illinois",United States,usa.webp,teams/usa,nam,west,wsob
+ven,Venezuela,ven,Caracas,Venezuela,ven.webp,teams/ven,sam,west,wsob

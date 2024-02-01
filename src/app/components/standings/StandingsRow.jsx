@@ -8,7 +8,7 @@ export default function StandingsRow(props) {
     }
 
     return (
-        <tr key={team.id} className={`standingsRow ${currentTeam}`} onClick={() => props.appView(`teams/team/${team.id}/dashboard`, {team: team})}>
+        <tr key={team.id}>
             <td className='teamName'>{team.name}</td>
             <td className='teamWins'>{team.wins}</td>
             <td className='teamLosses'>{team.losses}</td>

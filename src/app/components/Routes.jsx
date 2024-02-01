@@ -17,7 +17,7 @@ import Team from './teams/Team';
 // === PLAYERS === //
 
 // === ADMIN === //
-import Admin from './Admin';
+import Admin from './admin/Admin';
 
 // === 404 === //
 import NotFound from './NotFound';
@@ -43,7 +43,7 @@ export default function CreateRoutes() {
       {/* === PLAYER ROUTES === */}
 
       {/* === ADMIN ROUTES === */}
-      <Route path="/admin" element={<Admin />} />
+      <Route path="/admin/*" element={<Admin />} />
 
       {/* === 404 === */}
       <Route path="/*" element={<NotFound />} />

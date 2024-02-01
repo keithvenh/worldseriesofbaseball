@@ -1,10 +1,11 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import apiUrl from '../../helpers/apiUrl';
 import RecentGames from '../games/RecentGames';
 import UpcomingGames from '../games/UpcomingGames';
-
 import Standings from '../standings/Standings';
-import Loading from '../Loading';
 
-export default function Home(props) {
+export default function Home() {
 
     return (
       <div className='Home'>
@@ -12,57 +13,29 @@ export default function Home(props) {
           <RecentGames />
           <UpcomingGames />
         </div>
-        <div className='Standings'>
-          <div className='conferenceStandings'>
+        <section className='homeSection'>
+          <div className='standings'>
             <Standings 
-              appView={props.appView}
-              divisions={'west'}
-              title={"Western Conference"}
-            />   
-            <div className='divisionalStandings'>
-              <Standings 
-                appView={props.appView}
-                divisions={'nam'}
-                title={"North America"}
-              />
-              <Standings 
-                appView={props.appView}
-                divisions={'oce'}
-                title={"Oceania"}
-              />
-              <Standings 
-                appView={props.appView}
-                divisions={'sam'}
-                title={"South America"}
-              />
-            </div>
-          </div>
-
-          <div className='conferenceStandings'>
-            <div className='divisionalStandings'>
-              <Standings 
-                appView={props.appView}
-                divisions={'afr'}
-                title={"Africa"}
-              />
-              <Standings 
-                appView={props.appView}
-                divisions={'asi'}
-                title={"Asia"}
-              />
-              <Standings 
-                appView={props.appView}
-                divisions={'eur'}
-                title={"Europe"}
-              />
-            </div>
-            <Standings 
-              appView={props.appView}
-              divisions={'east'}
-              title={"Eastern Conference"}
+              league='wsob'
+              conferences={['west']}
+              divisions={['eur', 'nam', 'sam']}
+              season='wsob2024'
+              type='division'
+              title='Western Conference Standings'
             />
           </div>
-        </div>
+          <div className='leagueInfo'></div>
+          <div className='standings'>
+            <Standings 
+              league='wsob'
+              conferences={['east']}
+              divisions={['afr', 'asi', 'oce']}
+              season='wsob2024'
+              type='division'
+              title='Eastern Conference Standings'
+            />
+          </div>
+        </section>
       </div>
     )
 }

@@ -16,7 +16,7 @@ export default function UpcomingGames() {
     if(upcomingGames) {
         return (
             <div className='upcomingGames'>
-                {upcomingGames.map(game => <Summary key={game.id} game={game} />)}
+                {upcomingGames.map(game => <Summary key={game.id} game={game} classes='upcoming'/>)}
             </div>
         )
     }

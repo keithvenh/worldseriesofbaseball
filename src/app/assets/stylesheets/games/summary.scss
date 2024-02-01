@@ -1,22 +1,42 @@
 .gameSummary {
-  border-right: 1px solid $lightGrey;
-  border-left: 1px solid $lightGrey;
   margin: 6px 0;
+  border: 1px solid $red;
+  margin-right: 20px;
   th {
-    padding: 8px 12px;
+    padding: 4px 8px;
     font-weight: bold;
+    background-color: $red;
+    color: $white;
+  }
+  &.upcoming {
+    border-color: $lightNavy;
+    th {
+      background-color: $lightNavy;
+    }
   }
   td {
-    padding: 3px 12px;
+    padding: 3px;
     text-align: center;
     &.team {
       text-align: left;
+      padding: 3px 12px;
     }
   }
   tr {
+    &.visitor {
+      td {
+        padding-top: 8px;
+      }
+    }
+    &.home {
+      td {
+        padding-bottom: 8px;
+      }
+    }
     &.winner {
       td {
         font-weight: 700;
+        color: $darkNavy;
       }
     }
     &.loser {

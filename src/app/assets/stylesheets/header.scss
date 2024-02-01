@@ -1,7 +1,7 @@
 @import 'variables';
 
 .header {
-    background-color: $black;
+    background-color: $darkNavy;
     box-sizing: border-box;
     color: $white;
     display: flex;
@@ -30,11 +30,11 @@
         margin: 0 1em;
         font-weight: bold;
         &:hover {
-            color: aqua;
+            color: $lightRed;
         }
         &.active {
-            border-bottom: 1px solid aqua;
-            color: aqua;
+            border-bottom: 1px solid $lightRed;
+            color: $lightRed;
         }
     }
 }

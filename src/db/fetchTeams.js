@@ -1,8 +1,8 @@
-import { db } from './db';
+import { firestoreDB } from './db';
 import { collection, query, getDocs, orderBy, getDoc, doc } from 'firebase/firestore';
 
 export async function fetchTeams() {
-    let teamsRef = collection(db, "teams");
+    let teamsRef = collection(firestoreDB, "teams");
     const q = query(teamsRef, orderBy("name"));
     const querySnapshot = await getDocs(q);
     let allTeams = querySnapshot.docs.map((doc) => {
@@ -16,7 +16,7 @@ export async function fetchTeams() {
 }
 
 export async function fetchTeam(id) {
-  let teamRef = doc(db, 'teams', id);
+  let teamRef = doc(firestoreDB, 'teams', id);
   const docSnap = await getDoc(teamRef);
 
   if (docSnap.exists()) {

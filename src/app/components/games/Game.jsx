@@ -1,6 +1,6 @@
 import {useState, useEffect } from 'react';
 import { updateDoc, doc, getDoc, collection, getDocs, query } from 'firebase/firestore';
-import { db } from '../../../db/db.js';
+import { firestoreDB } from '../../../db/db.js';
 import Scorecard from '../scorecard/Scorecard';
 import Lineup from './Lineup';
 import { useParams, Link } from "react-router-dom";
@@ -32,7 +32,7 @@ export default function Game(props) {
 
     function updateGame() {
         console.log(game.id);
-        updateDoc(doc(db, 'leagues/1/games', game.id.toString()), {
+        updateDoc(doc(firestoreDB, 'leagues/1/games', game.id.toString()), {
             ...game
         }).then(() => {
             setMode('view');
@@ -41,7 +41,7 @@ export default function Game(props) {
 
     async function fetchGames() {
 
-        let gamesRef = collection(db, "leagues/1/games")
+        let gamesRef = collection(firestoreDB, "leagues/1/games")
         const q = query(gamesRef);
         const querySnapshot = await getDocs(q);
         let allGames = querySnapshot.docs.map((doc) => {
@@ -59,8 +59,8 @@ export default function Game(props) {
     }
 
     async function fetchTeams() {
-        let visTeam = await getDoc(doc(db, "leagues/1/teams", game.visitor));
-        let homeTeam = await getDoc(doc(db, "leagues/1/teams", game.home));
+        let visTeam = await getDoc(doc(firestoreDB, "leagues/1/teams", game.visitor));
+        let homeTeam = await getDoc(doc(firestoreDB, "leagues/1/teams", game.home));
 
         setTeams({visitor: visTeam.data(), home: homeTeam.data()});
     }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getDocs, query, where, collection } from 'firebase/firestore';
-import { db } from '../../../db/db';
+import { firestoreDB } from '../../../db/db';
 
 import Loading from '../Loading';
 
@@ -16,7 +16,7 @@ export default function Schedule(props) {
 
     async function fetchGames(teamId) {
 
-        let gamesRef = collection(db, "leagues/1/games")
+        let gamesRef = collection(firestoreDB, "leagues/1/games")
         const q1 = query(gamesRef, where("visitor", "==", teamId));
         const q2 = query(gamesRef, where("home", "==", teamId));
         const awayGames = await getDocs(q1);

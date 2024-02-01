@@ -1,40 +1,29 @@
 @import 'variables';
 
-.standingsTable {
-    background-color: $white;
-    margin: 24px;
-    .standingsTitle {
+.standings {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.divisionStandings {
+    display: grid;
+    grid-template-columns: repeat(10, max-content);
+    .standingsHeader {
         background-color: $black;
         color: $white;
-        padding: 6px;
-        text-transform: uppercase;
-    }
-    .standingsHeaders {
-        border-bottom: 1px solid $grey;
-        th {
-            font-weight: bold;
-            padding: 6px 12px;
+        font-weight: 700;
+        text-align: center;
+        &.divisionTitle {
+            text-align: left;
         }
     }
-    .standingsRow {
-        border-bottom: 1px dotted $lightGrey;
-        height: 24px;
-        line-height: 24px;
-        padding: 0;
-        &:hover {
-            background-color: $lightGrey;
-            cursor: pointer;
-        }
-        &.true {
-            color: $white;
-            background-color: $grey;
-        }
-        td {
-            padding: 0 6px;
-            text-align: center;
-            &.teamName {
-                text-align: left;
-            }
+    p {
+        padding: 6px 12px;
+    }
+    .standingsData {
+        text-align: center;
+        &.teamName {
+            text-align: left;
         }
     }
 }
