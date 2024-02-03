@@ -3,26 +3,28 @@ import { fetchTeams } from '../../../db/fetchTeams';
 import TeamCard from './TeamCard';
 import Loading from '../Loading';
 
+import axios from 'axios';
+import apiUrl from '../../helpers/apiUrl';
+
 export default function Teams() {
-    const [initializing, setInitializing] = useState(true);
+
     const [teams, setTeams] = useState(null);
 
     useEffect(() => {
-        fetchTeams().then(teams => {
-            console.log(teams);
-            setTeams(teams);
-            setInitializing(false);
-        });
+        axios.get(apiUrl('/api/teams')).then(res => {
+            console.log(res);
+            setTeams(res.data)
+        })
     }, [])
 
-    if(initializing) {
-        return (<Loading />)
+    if(teams) {
+        return (
+            <section className='teams'>
+                <div className='teamCards'>
+                    {teams.map(team => <TeamCard team={team} key={team.id}/>)}
+                </div>
+            </section>
+        )
     }
-    return (
-        <section className='teams'>
-            <div className='teamCards'>
-                {teams.map(team => <TeamCard team={team} key={team.id}/>)}
-            </div>
-        </section>
-    )
+    return (<Loading />)
 }

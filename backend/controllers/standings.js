@@ -3,7 +3,7 @@ import postgresDB from "../postgres.js";
 class StandingsController {
 
   
-  async index(req, res) {
+  static async index(req, res) {
     const standingsQuery = `
       SELECT * FROM standings
       WHERE season_id = 'wsob2024'
@@ -26,7 +26,29 @@ class StandingsController {
         teams: teamsRes.rows}
     );
   }
+
+  static async division(req, res) {
+    const divisionId = req.params.id;
+    console.log(divisionId);
+    const teamsQuery = `
+      SELECT id FROM teams WHERE division_id = $1
+    `
+
+    const teams = await postgresDB.query(teamsQuery, [divisionId])
+    const teamIds = teams.rows.map(team => team.id)
+    console.log(teamIds);
+
+    
+    const query = `
+      SELECT *
+      FROM standings
+      WHERE team_id IN (${teamIds.map((team, index) => `$${index + 1}`).join(', ')})
+    `
+
+    const divisionStandings = await postgresDB.query(query, teamIds)
+
+    res.send(divisionStandings.rows)
+  }
 }
 
-const standingsController = new StandingsController;
-export default standingsController;
+export default StandingsController;

@@ -5,7 +5,7 @@ def seed_games(gamesCSV, seasonId)
 
   puts "SEEDING GAMES..."
 
-  conn = PG.connect("postgres://nhppuxta:gV757NwEvUfBrO7zkGnuNDvZUmtpUUpc@otto.db.elephantsql.com/nhppuxta")
+  conn = PG.connect(process.env.REACT_APP_postgres_uri)
 
   CSV.foreach(gamesCSV, headers: true) do |game|
     final = game['winTeam'] != nil
@@ -27,7 +27,7 @@ def update_games(gamesCSV)
 
   puts "UPDATING GAMES..."
 
-  conn = PG.connect("postgres://nhppuxta:gV757NwEvUfBrO7zkGnuNDvZUmtpUUpc@otto.db.elephantsql.com/nhppuxta")
+  conn = PG.connect(process.env.REACT_APP_postgres_uri)
 
   CSV.foreach(gamesCSV, headers: true) do |game|
 

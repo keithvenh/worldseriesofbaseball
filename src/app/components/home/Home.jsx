@@ -1,13 +1,32 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import apiUrl from '../../helpers/apiUrl';
-import RecentGames from '../games/RecentGames';
-import UpcomingGames from '../games/UpcomingGames';
+import {useState, useEffect} from 'react';
+import {firestoreDB} from '../../../db/db';
+import {getDocs, collection, query, orderBy, limit} from 'firebase/firestore';
+import { Link } from 'react-router-dom';
+
 import Standings from '../standings/Standings';
 import GamesBar from '../games/GamesBar';
 
 export default function Home() {
 
+    const [headlines, setHeadlines] = useState([]);
+
+    async function fetchHeadlines() {
+      const headlinesRef = collection(firestoreDB, 'headlines')
+      const q = query(headlinesRef, orderBy('game_id', 'desc'), limit(5))
+      const headlinesSnapshot = await getDocs(q)
+      const headlines = []
+      headlinesSnapshot.forEach(doc => {
+        headlines.push({
+          id: doc.id,
+          ...doc.data()
+        });
+      })
+      setHeadlines(headlines);
+    }
+    
+    useEffect(() => {
+      fetchHeadlines();
+    }, [])
     return (
       <div className='Home'>
 
@@ -25,7 +44,17 @@ export default function Home() {
             />
           </div>
 
-          <div className='leagueInfo'></div>
+          <div className='leagueInfo'>
+            <div className='headlines'>
+              <h2>Latest News</h2>
+              {headlines.map(hl => (
+                <Link to={`/games/${hl.game_id}`}  key={hl.id}>
+                  <p className='headline'>&bull; {hl.headline}</p>
+                </Link>
+              ))}
+
+            </div>
+          </div>
           
           <div className='standings'>
             <Standings 

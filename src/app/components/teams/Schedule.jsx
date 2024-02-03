@@ -32,8 +32,6 @@ export default function Schedule(props) {
     } 
 
     useEffect(() => {
-        fetchGames(id)
-        setInitializing(false)
     }, [])
 
     if(games) {

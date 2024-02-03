@@ -10,16 +10,16 @@ export default function TeamCard({team}) {
         <img src={teamImage} alt={`${team.country} flag`}/>
 
       </div>
-      <h3 className='teamName'>
+      <div className='teamName'>
         <hr/>
         <h3>{team.name}</h3>
         <hr/>
-      </h3>
-      <p className='record'>({team.wins} - {team.losses})</p>
-      <p className='location'>{team.city}, <span className='teamCountry'>{team.country}</span></p>
-      <p className='conference'>{team.conference}</p>
-      <p className='division'>{team.division}</p>
-      {team.championships?.length > 0 ? <p>Champtions: {team.championships}</p> : ''}
+      </div>
+      <p className='record'>({team.wins || 0} - {team.losses || 0})</p>
+      <p className='location'>{team.city}</p>
+      <p className='teamCountry'>{team.country}</p>
+      <p className='conference'>{team.conference_name}</p>
+      <p className='division'>{team.division_name}</p>
     </Link>
   )
 }

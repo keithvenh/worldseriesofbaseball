@@ -1,8 +1,6 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import apiUrl from '../../helpers/apiUrl';
-import RecentGames from './RecentGames';
-import UpcomingGames from './UpcomingGames';
 import Summary from './Summary';
 
 export default function GamesBar() {
@@ -11,7 +9,6 @@ export default function GamesBar() {
 
   useEffect(() => {
     axios.get(apiUrl('/api/games/gamesBar')).then(res => {
-      console.log(res.data);
       setGames(res.data);
     })
   }, [])

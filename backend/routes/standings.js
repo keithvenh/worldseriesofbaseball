@@ -1,8 +1,9 @@
 import express from 'express';
-import standingsController from '../controllers/standings.js';
+import StandingsController from '../controllers/standings.js';
 
 const router = express.Router()
 
-router.get('/', standingsController.index)
+router.get('/', StandingsController.index);
+router.get('/division/:id', StandingsController.division);
 
 export default router;

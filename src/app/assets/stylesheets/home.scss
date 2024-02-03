@@ -19,4 +19,21 @@
 .homeSection {
   display: flex;
   justify-content: space-evenly;
+  flex: 0 1 25%;
+}
+
+.headlines {
+  padding: 12px;
+  background-color: $white;
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .headline {
+    font-size: 1.2em;
+    margin: 12px 0;
+    &:hover {
+      color: $lightNavy;
+    }
+  }
 }

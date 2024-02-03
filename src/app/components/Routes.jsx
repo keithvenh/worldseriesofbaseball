@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // === PRIMARY === //
 import Home from './home/Home';
-import Standings from './home/Standings';
+import Standings from './standings/Standings';
 
 // === GAMES === //
 import Games from './games/Games';

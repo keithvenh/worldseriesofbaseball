@@ -5,7 +5,7 @@ def seed_teams(teamsCSV)
 
   puts "SEEDING TEAMS..."
 
-  conn = PG.connect("postgres://nhppuxta:gV757NwEvUfBrO7zkGnuNDvZUmtpUUpc@otto.db.elephantsql.com/nhppuxta")
+  conn = PG.connect(process.env.REACT_APP_postgres_uri)
 
   CSV.foreach(teamsCSV, headers: true) do |team|
     conn.exec_params(
